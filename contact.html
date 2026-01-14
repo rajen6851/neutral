@@ -25,6 +25,22 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+.menu-item-has-children > a:after {
+    display: none !important;
+}
+
+.sub-menu {
+    display: none !important;
+}
+
+.menu-item-has-children > a:after {
+    display: none !important;
+}
+
+.sub-menu {
+    display: none !important;
+}
+
 
 .contact-wrapper {
     max-width: 700px;
@@ -164,68 +180,15 @@ button {
 			        	</div>
 			        	<div class="col-md-9">
 			        		<div class="main-navigation">
-			        			<ul id="primary-menu" class="menu">
-			        				<li class="menu-item menu-item-has-children current-menu-ancestor current-menu-parent"><a href="index.html">Home</a>
-			        					<ul class="sub-menu">
-			        						<li class="menu-item current-menu-item page_item current_page_item"><a href="index.html">Home 1</a></li>
-			        						<li class="menu-item"><a href="index-2.html">Home 2</a></li>
-			        						<li class="menu-item"><a href="index-3.html">Home 3</a></li>
-			        						<li class="menu-item"><a href="index-4.html">Home 4</a></li>
-			        					</ul>
-			        				</li>
-			        				<li class="menu-item menu-item-has-children"><a href="about-us.html">About Us</a>
-			        					<ul class="sub-menu">
-			        						<li class="menu-item"><a href="about-us.html">About Us</a></li>
-			        						<li class="menu-item menu-item-has-children"><a href="events.html">Events</a>
-				        						<ul class="">
-				        							<li class="menu-item"><a href="events.html">Event</a></li>
-				        							<li class="menu-item"><a href="events-detail.html">Event Detail</a></li>
-				        						</ul>
-				        					</li>
-					        				<li class="menu-item menu-item-has-children"><a href="shop.html">Shop</a>
-					        					<ul class="sub-menu">
-					        						<li class="menu-item"><a href="shop.html">Shop</a></li>
-					        						<li class="menu-item"><a href="shop-detail.html">Shop Detail</a></li>
-					        						<li class="menu-item"><a href="cart.html">Cart</a></li>
-					        						<li class="menu-item"><a href="checkout.html">Checkout</a></li>
-					        					</ul>
-					        				</li>
-			        						<li class="menu-item"><a href="faq.html">FAQ's</a></li>
-			        						<li class="menu-item"><a href="gallery.html">Gallery</a></li>
-			        						<li class="menu-item"><a href="404-page.html">404 Pages</a></li>
-			        						<li class="menu-item"><a href="comming-soon.html">Comming Soon</a></li>
-			        						<li class="menu-item"><a href="login.html">Login</a></li>
-			        						<li class="menu-item"><a href="typography.html">Typography</a></li>
-			        						<li class="menu-item"><a href="carrer.html">Career Page</a></li>
-			        						<li class="menu-item"><a href="corporate-governance.html">Corporate Governance</a></li>
-			        						<li class="menu-item"><a href="history.html">History</a></li>
-			        						<li class="menu-item"><a href="our-team.html">Our Team</a></li>
-			        						<li class="menu-item"><a href="partner-clients.html">Partner Clients</a></li>
-			        						<li class="menu-item"><a href="contact-us.html">Contact Us</a></li>
-			        					</ul>
-			        				</li>
-			        				<li class="menu-item menu-item-has-children"><a href="services.html">Services</a>
-			        					<ul class="sub-menu">
-			        						<li class="menu-item"><a href="services.html">Services</a></li>
-			        						<li class="menu-item"><a href="services-2.html">Services 2</a></li>
-			        						<li class="menu-item"><a href="services-detail.html">Services Detail</a></li>
-			        					</ul>
-			        				</li>
-			        				<li class="menu-item menu-item-has-children"><a href="project.html">Projects</a>
-			        					<ul class="sub-menu">
-			        						<li class="menu-item"><a href="project.html">Project 1</a></li>
-			        						<li class="menu-item"><a href="project-2.html">Project 2</a></li>
-			        						<li class="menu-item"><a href="project-detail.html">Project Detail</a></li>
-			        					</ul>
-			        				</li>
-			        				<li class="menu-item menu-item-has-children"><a href="news.html">News</a>
-			        					<ul class="sub-menu">
-			        						<li class="menu-item current-menu-item page_item current_page_item"><a href="news.html">News 1</a></li>
-			        						<li class="menu-item"><a href="news-2.html">News 2</a></li>
-			        						<li class="menu-item"><a href="post.html">News Detail</a></li>
-			        					</ul>
-			        				</li>
-			        			</ul>
+			        		<ul id="primary-menu" class="menu">
+    <li class="menu-item"><a href="index.html">Home</a></li>
+    <li class="menu-item"><a href="about-us.html">About Us</a></li>
+    <li class="menu-item"><a href="product.html">Product</a></li>
+    <li class="menu-item"><a href="client.html">Client</a></li>
+    <li class="menu-item"><a href="sector.html">Sector</a></li>
+    <li class="menu-item"><a href="contact.html">Contact</a></li>
+</ul>
+
 		        				<a href="#" class="btn btn-primary">Get a quote<i class="icon ion-md-paper-plane"></i></a>
 			        		</div>
 			        	</div>
@@ -326,71 +289,101 @@ button {
 
     <form id="contactForm">
 
-        <!-- STEP 1 -->
-        <div class="form-step active">
-            <h3>Step 1 – Personal Information</h3>
 
-            <div class="row">
-                <input type="text" placeholder="First Name *" required>
-                <input type="text" placeholder="Last Name *" required>
-            </div>
+		<div class="form-step active">
+    <h3>Step 1 – Personal Information</h3>
 
-            <input type="text" placeholder="Company Name *" required>
-            <input type="text" placeholder="Company Type *" required>
-            <input type="text" placeholder="Country *" required>
+    <div class="row">
+        <input type="text" placeholder="First Name *" required>
+        <input type="text" placeholder="Last Name *" required>
+    </div>
 
-            <textarea placeholder="Address *" required></textarea>
+    <input type="text" placeholder="Company *" required>
+    <input type="text" placeholder="Company Type *" required>
+    <input type="text" placeholder="Country *" required>
 
-            <div class="row">
-                <input type="text" placeholder="Phone *" required>
-                <input type="text" placeholder="Cell">
-            </div>
+    <input type="text" placeholder="Street Address *" required>
+    <input type="text" placeholder="Address Line 2">
+    <div class="row">
+        <input type="text" placeholder="City *" required>
+        <input type="text" placeholder="State *" required>
+        <input type="text" placeholder="ZIP Code *" required>
+    </div>
 
-            <div class="row">
-                <input type="text" placeholder="Fax">
-                <input type="email" placeholder="Email *" required>
-            </div>
+    <div class="row">
+        <input type="text" placeholder="Phone *" required>
+        <input type="text" placeholder="Cell">
+    </div>
 
-            <button type="button" class="next-btn">Next</button>
-        </div>
+    <div class="row">
+        <input type="text" placeholder="Fax">
+        <input type="email" placeholder="Email *" required>
+    </div>
+
+    <button type="button" class="next-btn">Next</button>
+</div>
+
 
         <!-- STEP 2 -->
-        <div class="form-step">
-            <h3>Step 2 – Select Product Line</h3>
+<div class="form-step">
+    <h3>Step 2 – Products</h3>
+    <p>Please select the product line that you are interested in.</p>
 
-            <div class="radio-group">
-                <label><input type="radio" name="product"> Low Resistance Grounding</label>
-                <label><input type="radio" name="product"> High Resistance Grounding</label>
-                <label><input type="radio" name="product"> Resistor Elements</label>
-                <label><input type="radio" name="product"> Harmonic Filter</label>
-                <label><input type="radio" name="product"> Dynamic Braking Resistors</label>
-                <label><input type="radio" name="product"> Motor Control Resistors</label>
-                <label><input type="radio" name="product"> Other</label>
-            </div>
+    <div class="radio-group">
+        <label><input type="radio" name="product"> Low Resistance Grounding</label>
+        <label><input type="radio" name="product"> High Resistance Grounding</label>
+        <label><input type="radio" name="product"> Resistor Elements</label>
+        <label><input type="radio" name="product"> Harmonic Filter</label>
+        <label><input type="radio" name="product"> Dynamic Braking Resistors</label>
+        <label><input type="radio" name="product"> Motor Control Resistors</label>
+        <label><input type="radio" name="product"> Other</label>
+    </div>
 
-            <div class="btn-group">
-                <button type="button" class="prev-btn">Back</button>
-                <button type="button" class="next-btn">Next</button>
-            </div>
-        </div>
+    <div class="btn-group">
+        <button type="button" class="prev-btn">Back</button>
+        <button type="button" class="next-btn">Next</button>
+    </div>
+</div>
 
         <!-- STEP 3 -->
-        <div class="form-step">
-            <h3>Step 3 – Project Details</h3>
+       <div class="form-step">
+    <h3>Step 3 – Project Details</h3>
 
-            <input type="text" placeholder="Project Name">
-            <textarea placeholder="Comments / Electrical Specifications"></textarea>
+    <input type="text" placeholder="Project Name">
+    <textarea placeholder="Comments / Electrical Specifications"></textarea>
 
-            <h4>Contact Details</h4>
-            <textarea placeholder="Contact Address"></textarea>
-            <input type="email" placeholder="Contact Email">
-            <input type="text" placeholder="Contact Phone">
+    <h4>Contact</h4>
+    <textarea placeholder="Address"></textarea>
+    <input type="email" placeholder="Mail">
+    <input type="text" placeholder="Contact Number">
+    <input type="text" placeholder="Website">
 
-            <div class="btn-group">
-                <button type="button" class="prev-btn">Back</button>
-                <button type="submit" class="submit-btn">Submit</button>
-            </div>
-        </div>
+    <div class="btn-group">
+        <button type="button" class="prev-btn">Back</button>
+        <button type="submit" class="submit-btn">Submit</button>
+    </div>
+</div>
+<script>
+const steps = document.querySelectorAll('.form-step');
+let currentStep = 0;
+
+document.querySelectorAll('.next-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        steps[currentStep].classList.remove('active');
+        currentStep++;
+        steps[currentStep].classList.add('active');
+    });
+});
+
+document.querySelectorAll('.prev-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        steps[currentStep].classList.remove('active');
+        currentStep--;
+        steps[currentStep].classList.add('active');
+    });
+});
+</script>
+
 
     </form>
 </div>

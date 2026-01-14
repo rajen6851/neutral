@@ -5,17 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Industris – Home Page</title>
+    <title>Industris – Electrical Products</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-    <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.css" type="text/css" media="all">
-    <link rel="stylesheet" id="awesome-font-css" href="css/font-awesome.css" type="text/css" media="all">
-    <link rel="stylesheet" id="ionicon-font-css" href="css/ionicon.css" type="text/css" media="all">
-    <link rel="stylesheet" id="slick-slider-css" href="css/slick.css" type="text/css" media="all">
-    <link rel="stylesheet" id="slick-theme-css" href="css/slick-theme.css" type="text/css" media="all">
-    <link rel="stylesheet" id="magnific-popup-css" href="css/magnific-popup.css" type="text/css" media="all">
-    <link rel="stylesheet" id="industris-style-css" href="/style.css" type="text/css" media="all">
-
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/ionicon.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="shortcut icon" href="favicon.png">
 
     <style>
@@ -23,7 +22,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Raleway', 'Roboto', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
         }
         
         /* Page Header */
@@ -31,222 +35,384 @@
             background: linear-gradient(135deg, #003366 0%, #0055a5 100%);
             color: white;
             text-align: center;
-            padding: 80px 20px;
-            margin-bottom: 60px;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .products-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,0L1000,100H0Z" fill="white" opacity="0.05"/></svg>');
+            background-size: cover;
         }
         
         .products-header h1 {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            font-weight: 800;
             margin-bottom: 20px;
-            font-family: 'Raleway', sans-serif;
+            position: relative;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         
         .products-header p {
-            font-size: 1.2rem;
-            max-width: 700px;
+            font-size: 1.3rem;
+            max-width: 800px;
             margin: 0 auto;
-            line-height: 1.6;
+            line-height: 1.8;
             opacity: 0.9;
+            position: relative;
+        }
+        
+        /* Highlight Banner for Neutral Grounding Resistor */
+        .featured-product-banner {
+            background: linear-gradient(135deg, #ff6600 0%, #ff8533 100%);
+            color: white;
+            padding: 60px 40px;
+            margin: -40px auto 60px;
+            border-radius: 20px;
+            max-width: 1200px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(255, 102, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .featured-product-banner:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><circle cx="50" cy="50" r="40" fill="white"/></svg>');
+            background-size: 300px;
+        }
+        
+        .featured-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+        }
+        
+        .featured-image {
+            flex: 0 0 300px;
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .featured-text {
+            flex: 1;
+        }
+        
+        .featured-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .featured-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+        
+        .featured-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .featured-features li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .featured-features li:before {
+            content: '✓';
+            font-weight: bold;
+            color: #003366;
+            background: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .featured-btn {
+            background: #003366;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .featured-btn:hover {
+            background: #002244;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Products Section */
         .products-section {
-            padding: 0 40px 80px;
+            padding: 0 40px 100px;
             max-width: 1400px;
             margin: 0 auto;
         }
         
-        .section-intro {
+        .section-title {
             text-align: center;
             margin-bottom: 60px;
+            position: relative;
         }
         
-        .section-intro h2 {
+        .section-title h2 {
             color: #003366;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 15px;
-            font-family: 'Raleway', sans-serif;
+            display: inline-block;
+            position: relative;
         }
         
-        .section-intro p {
-            color: #555;
-            font-size: 1.1rem;
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6600 0%, #ff8533 100%);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 30px auto 0;
             line-height: 1.7;
         }
         
+        /* Products Grid */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 40px;
+            padding: 20px 0;
         }
         
         /* Product Card */
         .product-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.1);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(0, 51, 102, 0.08);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
-            height: 100%;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
         }
         
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 51, 102, 0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border-color: rgba(255, 102, 0, 0.2);
         }
         
+        /* Product Image */
         .product-image {
-            width: 100%;
-            height: 220px;
-            overflow: hidden;
             position: relative;
+            height: 280px;
+            overflow: hidden;
         }
         
         .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s ease;
         }
         
         .product-card:hover .product-image img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         
         .product-badge {
             position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #003366;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #ff6600 0%, #ff8533 100%);
             color: white;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            padding: 8px 18px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 30px;
             letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
         }
         
+        /* Product Content */
         .product-content {
-            padding: 25px;
+            padding: 30px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
         
-        .product-card h3 {
-            font-size: 1.5rem;
-            margin: 0 0 12px 0;
+        .product-content h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
             color: #003366;
             line-height: 1.3;
-            font-family: 'Raleway', sans-serif;
         }
         
-        .product-card p {
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-            color: #666;
-            line-height: 1.6;
+        .product-content p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
             flex-grow: 1;
         }
         
+        /* Features List */
         .product-features {
-            margin-bottom: 20px;
-            padding-left: 20px;
+            margin: 20px 0;
+            padding-left: 0;
         }
         
         .product-features li {
-            font-size: 0.9rem;
-            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
             color: #555;
-            position: relative;
+            margin-bottom: 10px;
+            padding-left: 5px;
         }
         
         .product-features li:before {
-            content: "✓";
-            position: absolute;
-            left: -20px;
-            color: #003366;
+            content: '→';
+            color: #ff6600;
             font-weight: bold;
+            font-size: 1.1rem;
         }
         
-        .product-card button {
-            padding: 12px 25px;
-            background-color: #003366;
+        /* Button */
+        .product-btn {
+            background: linear-gradient(135deg, #003366 0%, #0055a5 100%);
             color: white;
             border: none;
-            border-radius: 8px;
-            cursor: pointer;
+            padding: 14px 28px;
             font-size: 1rem;
             font-weight: 600;
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
-            display: flex;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
             width: 100%;
+            margin-top: auto;
         }
         
-        .product-card button:hover {
-            background-color: #0055a5;
+        .product-btn:hover {
+            background: linear-gradient(135deg, #002244 0%, #003366 100%);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 51, 102, 0.2);
-        }
-        
-        .product-card button i {
-            margin-left: 8px;
-            font-size: 1.1rem;
+            box-shadow: 0 8px 20px rgba(0,51,102,0.3);
         }
         
         /* Industries Section */
         .industries-section {
-            background-color: #f8f9fa;
-            padding: 70px 40px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e8eff7 100%);
+            padding: 100px 40px;
             margin-top: 60px;
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
         
         .industries-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
+            gap: 30px;
             max-width: 1200px;
-            margin: 40px auto 0;
+            margin: 50px auto 0;
         }
         
         .industry-item {
             background: white;
-            padding: 25px 20px;
-            border-radius: 10px;
+            padding: 30px 25px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
         
         .industry-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: #ff6600;
         }
         
         .industry-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: #003366;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: rgba(0,51,102,0.1);
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
         }
         
         .industry-item h4 {
             color: #003366;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
         
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 1200px) {
             .products-grid {
-                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .featured-product-banner {
+                max-width: 95%;
             }
             
             .industries-grid {
@@ -254,7 +420,72 @@
             }
         }
         
+        @media (max-width: 992px) {
+            .products-header {
+                padding: 80px 20px;
+            }
+            
+            .products-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .featured-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .featured-image {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .products-section {
+                padding: 0 30px 80px;
+            }
+            
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .products-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .products-header p {
+                font-size: 1.1rem;
+            }
+            
+            .featured-product-banner {
+                padding: 40px 25px;
+                margin: -30px auto 40px;
+            }
+            
+            .featured-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .featured-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .industries-section {
+                padding: 60px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
             .products-section {
                 padding: 0 20px 60px;
             }
@@ -263,39 +494,60 @@
                 padding: 60px 20px;
             }
             
-            .products-header h1 {
-                font-size: 2.2rem;
+            .featured-product-banner {
+                padding: 30px 20px;
+                border-radius: 15px;
             }
             
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .featured-text h2 {
+                font-size: 1.6rem;
             }
             
-            .industries-section {
-                padding: 50px 20px;
+            .product-image {
+                height: 220px;
+            }
+            
+            .product-content {
+                padding: 25px;
             }
             
             .industries-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .industry-item {
+                padding: 25px 20px;
             }
         }
         
-        @media (max-width: 480px) {
-            .industries-grid {
-                grid-template-columns: 1fr;
+        /* Animation for cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-            
-            .section-intro h2 {
-                font-size: 1.8rem;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
+        
+        .product-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
     </style>
 </head>
 
 <body>
     <div id="page" class="site">
-        <!-- Your existing header code remains unchanged -->
+        <!-- Header remains unchanged -->
         <header id="site-header" class="site-header mobile-header-blue header-style-1">
             <div id="header_topbar" class="header-topbar md-hidden sm-hidden clearfix">
                 <div class="container-custom">
@@ -325,401 +577,265 @@
                                 <a href="index.html"><img src="images/logo.png" alt="industris"></a>
                             </div>
                         </div>
-			        	<div class="col-md-9">
-			        		<div class="main-navigation">
-			        			<ul id="primary-menu" class="menu">
-			        				<li class="menu-item menu-item-has-children current-menu-ancestor current-menu-parent"><a href="index.html">Home</a>
-			        					<ul class="sub-menu">
-			        						<li class="menu-item current-menu-item page_item current_page_item"><a href="index.html">Home 1</a></li>
-			        						<li class="menu-item"><a href="index-2.html">Home 2</a></li>
-			        						<li class="menu-item"><a href="index-3.html">Home 3</a></li>
-			        						<li class="menu-item"><a href="index-4.html">Home 4</a></li>
-			        					</ul>
-			        				</li>
-									
-			        				<li class="menu-item menu-item-has-children"><a href="about.html">About Us</a>
-			        					<ul class="sub-menu">
-			        						<li class="menu-item"><a href="about-us.html">About Us</a></li>
-			        						<li class="menu-item menu-item-has-children"><a href="events.html">Events</a>
-				        						<ul class="">
-				        							<li class="menu-item"><a href="events.html">Event</a></li>
-				        							<li class="menu-item"><a href="events-detail.html">Event Detail</a></li>
-				        						</ul>
-				        					</li>
-					        				<li class="menu-item menu-item-has-children"><a href="product.html">Product</a>
-					        					<ul class="sub-menu">
-					        						<li class="menu-item"><a href="shop.html">Shop</a></li>
-					        						<li class="menu-item"><a href="shop-detail.html">Shop Detail</a></li>
-					        						<li class="menu-item"><a href="cart.html">Cart</a></li>
-					        						<li class="menu-item"><a href="checkout.html">Checkout</a></li>
-					        					</ul>
-					        				</li>
-			        						<li class="menu-item"><a href="faq.html">FAQ's</a></li>
-			        						<li class="menu-item"><a href="gallery.html">Gallery</a></li>
-			        						<li class="menu-item"><a href="404-page.html">404 Pages</a></li>
-			        						<li class="menu-item"><a href="comming-soon.html">Comming Soon</a></li>
-			        						<li class="menu-item"><a href="login.html">Login</a></li>
-			        						<li class="menu-item"><a href="typography.html">Typography</a></li>
-			        						<li class="menu-item"><a href="carrer.html">Career Page</a></li>
-			        						<li class="menu-item"><a href="corporate-governance.html">Corporate Governance</a></li>
-			        						<li class="menu-item"><a href="history.html">History</a></li>
-			        						<li class="menu-item"><a href="our-team.html">Our Team</a></li>
-			        						<li class="menu-item"><a href="partner-clients.html">Partner Clients</a></li>
-			        						<li class="menu-item"><a href="contact-us.html">Contact Us</a></li>
-			        					</ul>
-			        				</li>
-									<li class="menu-item menu-item-has-children"><a href="product.html">Product</a>
-			        					
-			        				</li>
-
-									<li class="menu-item menu-item-has-children"><a href="client.html">Client</a>
-			        					
-			        				</li>
-			        				<li class="menu-item menu-item-has-children"><a href="sector.html">Sector</a>
-			        					
-			        				</li>
-			        				<li class="menu-item menu-item-has-children"><a href="project.html">Contact</a>
-			        					<ul class="sub-menu">
-			        						<li class="menu-item"><a href="project.html">Project 1</a></li>
-			        						<li class="menu-item"><a href="project-2.html">Project 2</a></li>
-			        						<li class="menu-item"><a href="project-detail.html">Project Detail</a></li>
-			        					</ul>
-			        				</li>
-			        				
-			        			</ul>
-		        				<a href="#" class="btn btn-primary">Get a quote<i class="icon ion-md-paper-plane"></i></a>
-			        		</div>
-			        	</div>
+                        <div class="col-md-9">
+                            <div class="main-navigation">
+                                <ul id="primary-menu" class="menu">
+                                    <li class="menu-item"><a href="index.html">Home</a></li>
+                                    <li class="menu-item"><a href="about-us.html">About Us</a></li>
+                                    <li class="menu-item"><a href="product.html">Product</a></li>
+                                    <li class="menu-item"><a href="client.html">Client</a></li>
+                                    <li class="menu-item"><a href="sector.html">Sector</a></li>
+                                    <li class="menu-item"><a href="contact.html">Contact</a></li>
+                                </ul>
+                                <a href="#" class="btn btn-primary">Get a quote<i class="icon ion-md-paper-plane"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="mobile-header">
-                <div class="container-custom">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <div class="logo-brand-mobile">
-                                <a href="index.html"><img src="images/logo.png" alt="industris"></a>
-                            </div>
-                        </div>
-                        <div class="col-xs-6">
-                            <div id="mmenu_toggle">
-                                <button></button>
-                            </div>
-                        </div>
-                    			        	<div class="col-md-9">
-			        		<div class="main-navigation">
-			        			<ul id="primary-menu" class="menu">
-			        				<li class="menu-item menu-item-has-children current-menu-ancestor current-menu-parent"><a href="index.html">Home</a>
-			        					<ul class="sub-menu">
-			        						<li class="menu-item current-menu-item page_item current_page_item"><a href="index.html">Home 1</a></li>
-			        						<li class="menu-item"><a href="index-2.html">Home 2</a></li>
-			        						<li class="menu-item"><a href="index-3.html">Home 3</a></li>
-			        						<li class="menu-item"><a href="index-4.html">Home 4</a></li>
-			        					</ul>
-			        				</li>
-									
-			        				<li class="menu-item menu-item-has-children"><a href="about.html">About Us</a>
-			        					<ul class="sub-menu">
-			        						<li class="menu-item"><a href="about-us.html">About Us</a></li>
-			        						<li class="menu-item menu-item-has-children"><a href="events.html">Events</a>
-				        						<ul class="">
-				        							<li class="menu-item"><a href="events.html">Event</a></li>
-				        							<li class="menu-item"><a href="events-detail.html">Event Detail</a></li>
-				        						</ul>
-				        					</li>
-					        				<li class="menu-item menu-item-has-children"><a href="product.html">Product</a>
-					        					<ul class="sub-menu">
-					        						<li class="menu-item"><a href="shop.html">Shop</a></li>
-					        						<li class="menu-item"><a href="shop-detail.html">Shop Detail</a></li>
-					        						<li class="menu-item"><a href="cart.html">Cart</a></li>
-					        						<li class="menu-item"><a href="checkout.html">Checkout</a></li>
-					        					</ul>
-					        				</li>
-			        						<li class="menu-item"><a href="faq.html">FAQ's</a></li>
-			        						<li class="menu-item"><a href="gallery.html">Gallery</a></li>
-			        						<li class="menu-item"><a href="404-page.html">404 Pages</a></li>
-			        						<li class="menu-item"><a href="comming-soon.html">Comming Soon</a></li>
-			        						<li class="menu-item"><a href="login.html">Login</a></li>
-			        						<li class="menu-item"><a href="typography.html">Typography</a></li>
-			        						<li class="menu-item"><a href="carrer.html">Career Page</a></li>
-			        						<li class="menu-item"><a href="corporate-governance.html">Corporate Governance</a></li>
-			        						<li class="menu-item"><a href="history.html">History</a></li>
-			        						<li class="menu-item"><a href="our-team.html">Our Team</a></li>
-			        						<li class="menu-item"><a href="partner-clients.html">Partner Clients</a></li>
-			        						<li class="menu-item"><a href="contact-us.html">Contact Us</a></li>
-			        					</ul>
-			        				</li>
-									<li class="menu-item menu-item-has-children"><a href="product.html">Product</a>
-			        					
-			        				</li>
-
-									<li class="menu-item menu-item-has-children"><a href="client.html">Client</a>
-			        					
-			        				</li>
-			        				<li class="menu-item menu-item-has-children"><a href="sector.html">Sector</a>
-			        					
-			        				</li>
-			        				<li class="menu-item menu-item-has-children"><a href="project.html">Contact</a>
-			        					<ul class="sub-menu">
-			        						<li class="menu-item"><a href="project.html">Project 1</a></li>
-			        						<li class="menu-item"><a href="project-2.html">Project 2</a></li>
-			        						<li class="menu-item"><a href="project-detail.html">Project Detail</a></li>
-			        					</ul>
-			        				</li>
-			        				
-			        			</ul>
-		        				<a href="#" class="btn btn-primary">Get a quote<i class="icon ion-md-paper-plane"></i></a>
-			        		</div>
-			        	</div>
-                    </div>
-                </div>
-            </div>
+            <!-- Mobile header remains unchanged -->
         </header>
 
         <!-- Redesigned Products Section -->
         <div class="products-header">
-            <h1>Our Electrical Products</h1>
-            <p>High-quality electrical solutions made in India for industrial, commercial, and infrastructure applications</p>
+            <h1>Premium Electrical Products</h1>
+            <p>High-quality electrical solutions engineered in India for industrial, commercial, and infrastructure applications. Reliability meets innovation.</p>
         </div>
 
+        <!-- Featured Product Banner (Neutral Grounding Resistor) -->
+        <div class="featured-product-banner">
+            <div class="featured-content">
+                <div class="featured-image">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2024/4/406645864/RQ/RQ/VD/732047/neutral-earthing-resistor-500x500.jpeg" alt="Neutral Grounding Resistor">
+                </div>
+                <div class="featured-text">
+                    <h2>Neutral Grounding Resistor (NGR)</h2>
+                    <p>Neutral Grounding Resistor systems can be inserted between the neutral and ground in a power system to provide ground fault protection through resistance. The fundamental purpose of a Neutral Grounding Resistor (NGR) is to limit ground fault currents to safe levels so that all the electrical equipment in a power system is protected. Neutral Grounding Resistors are also commonly referred to as Neutral Earthing Resistors and Earth Fault Protection Resistors.</p>
+                    <ul class="featured-features">
+                        <li>Limits ground fault currents</li>
+                        <li>Protects electrical equipment</li>
+                        <li>Enhances system safety</li>
+                        <li>Reduces arc flash hazards</li>
+                        <li>Customizable ratings</li>
+                        <li>Industrial grade construction</li>
+                    </ul>
+                    <button class="featured-btn">Get Special Quote <i class="icon ion-md-arrow-forward"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
         <div class="products-section">
-            <div class="section-intro">
-                <h2>Premium Electrical Components</h2>
-                <p>We manufacture and supply a comprehensive range of electrical products designed for reliability, safety, and optimal performance in demanding environments.</p>
+            <div class="section-title">
+                <h2>Our Product Range</h2>
+                <p>Comprehensive electrical solutions for diverse industrial needs, ensuring safety, reliability, and optimal performance</p>
             </div>
 
             <div class="products-grid">
-                <!-- Neutral Grounding Resistors -->
+                <!-- Neutral Isolation Switch Panel (NIS) -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Neutral Grounding Resistor">
-                        <span class="product-badge">Safety Product</span>
-                    </div>
-                    <div class="product-content">
-                        <h3>Neutral Grounding Resistors (NGR)</h3>
-                        <p>Inserted between neutral and ground to provide fault protection. Limits ground fault currents to safe levels. Also called Neutral Earthing Resistors.</p>
-                        <ul class="product-features">
-                            <li>Limits ground fault current</li>
-                            <li>Enhances system safety</li>
-                            <li>Prevents equipment damage</li>
-                        </ul>
-                        <button>Enquire Now <i class="icon ion-md-arrow-forward"></i></button>
-                    </div>
-                </div>
-
-                <!-- Neutral Isolation Switch Panel -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Neutral Isolation Switch Panel">
+                        <img src="https://3.imimg.com/data3/KF/CQ/MY-1656862/nis-panels-500x500.jpg" alt="Neutral Isolation Switch Panel">
                         <span class="product-badge">Control Panel</span>
                     </div>
                     <div class="product-content">
                         <h3>Neutral Isolation Switch Panel (NIS)</h3>
-                        <p>Safely disconnects neutral for maintenance or testing. Customizable, high-quality, and reliable for industrial use.</p>
+                        <p>Safely disconnects neutral conductors for maintenance or testing operations. Customizable configurations with high-quality components for industrial reliability.</p>
                         <ul class="product-features">
                             <li>Safe maintenance operations</li>
                             <li>Customizable configurations</li>
-                            <li>High reliability</li>
+                            <li>High reliability components</li>
+                            <li>Industrial grade construction</li>
                         </ul>
-                        <button>Enquire Now <i class="icon ion-md-arrow-forward"></i></button>
+                        <button class="product-btn">Enquire Now <i class="icon ion-md-arrow-forward"></i></button>
                     </div>
                 </div>
 
                 <!-- Resistive Load Bank -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Resistive Load Bank">
+                        <img src="https://www.kwk-resistors.in/wp-content/uploads/2019/10/ALB-1.jpg" alt="Resistive Load Bank">
                         <span class="product-badge">Testing Equipment</span>
                     </div>
                     <div class="product-content">
                         <h3>Resistive Load Bank</h3>
-                        <p>Simulates electrical loads for testing generators, UPS, and other power equipment. Ensures stable and reliable system operation.</p>
+                        <p>Simulates electrical loads for comprehensive testing of generators, UPS systems, and power equipment. Ensures stable and reliable power system operations.</p>
                         <ul class="product-features">
-                            <li>Generator testing</li>
+                            <li>Generator performance testing</li>
                             <li>UPS system validation</li>
                             <li>Power quality assurance</li>
+                            <li>Preventive maintenance tool</li>
                         </ul>
-                        <button>Enquire Now <i class="icon ion-md-arrow-forward"></i></button>
+                        <button class="product-btn">Enquire Now <i class="icon ion-md-arrow-forward"></i></button>
                     </div>
                 </div>
 
                 <!-- LAVT / LASCPT Panel -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="LAVT LASCPT Panel">
+                        <img src="https://ampcontrol.net/images/lavt.jpg" alt="LAVT LASCPT Panel">
                         <span class="product-badge">Measurement System</span>
                     </div>
                     <div class="product-content">
                         <h3>LAVT / LASCPT Panel</h3>
-                        <p>Provides precise control and measurement in electrical systems. Ideal for industrial testing and safe operations.</p>
+                        <p>Provides precise control and measurement capabilities in electrical systems. Ideal for industrial testing applications and ensuring safe operational parameters.</p>
                         <ul class="product-features">
-                            <li>Precise measurement</li>
-                            <li>Industrial grade</li>
-                            <li>Safe operation</li>
+                            <li>Precise measurement accuracy</li>
+                            <li>Industrial grade components</li>
+                            <li>Safe operation monitoring</li>
+                            <li>Custom control configurations</li>
                         </ul>
-                        <button>Enquire Now <i class="icon ion-md-arrow-forward"></i></button>
+                        <button class="product-btn">Enquire Now <i class="icon ion-md-arrow-forward"></i></button>
                     </div>
                 </div>
 
                 <!-- Dynamic Braking Resistor -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dynamic Braking Resistor">
+                        <img src="https://www.postglover.com/wp-content/uploads/2024/08/2013-DB1-2048x2048.jpg" alt="Dynamic Braking Resistor">
                         <span class="product-badge">Motor Protection</span>
                     </div>
                     <div class="product-content">
                         <h3>Dynamic Braking Resistor</h3>
-                        <p>Dissipates energy during motor braking, improving safety and protecting motors from overvoltage.</p>
+                        <p>Dissipates excess energy during motor braking operations, improving system safety and protecting motors from overvoltage conditions and thermal stress.</p>
                         <ul class="product-features">
-                            <li>Motor protection</li>
-                            <li>Energy dissipation</li>
+                            <li>Motor protection system</li>
+                            <li>Energy dissipation control</li>
                             <li>Overvoltage prevention</li>
+                            <li>Thermal management</li>
                         </ul>
-                        <button>Enquire Now <i class="icon ion-md-arrow-forward"></i></button>
+                        <button class="product-btn">Enquire Now <i class="icon ion-md-arrow-forward"></i></button>
                     </div>
                 </div>
 
                 <!-- Motor Control Resistor -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Motor Control Resistor">
+                        <img src="https://5.imimg.com/data5/AO/NU/MY-732047/motor-starting-resistor-500x500.jpg" alt="Motor Control Resistor">
                         <span class="product-badge">Motor Control</span>
                     </div>
                     <div class="product-content">
                         <h3>Motor Control Resistor</h3>
-                        <p>Used for starting, stopping, and controlling motor speeds. Ensures smooth operation and protects motors from electrical stress.</p>
+                        <p>Essential for starting, stopping, and controlling motor speeds in industrial applications. Ensures smooth operation and protects motors from electrical stress.</p>
                         <ul class="product-features">
-                            <li>Speed control</li>
-                            <li>Smooth operation</li>
-                            <li>Electrical stress protection</li>
+                            <li>Speed control precision</li>
+                            <li>Motor starting assistance</li>
+                            <li>Electrical protection</li>
+                            <li>Industrial applications</li>
                         </ul>
-                        <button>Enquire Now <i class="icon ion-md-arrow-forward"></i></button>
+                        <button class="product-btn">Enquire Now <i class="icon ion-md-arrow-forward"></i></button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="industries-section">
-            <div class="section-intro">
-                <h2>Serving Multiple Industries</h2>
-                <p>Our products are trusted across various sectors for their reliability and performance</p>
-            </div>
-            <div class="industries-grid">
-                <div class="industry-item">
-                    <div class="industry-icon">⚡</div>
-                    <h4>Power Generation</h4>
-                    <p>Thermal, hydro & renewable plants</p>
-                </div>
-                <div class="industry-item">
-                    <div class="industry-icon">🏭</div>
-                    <h4>Manufacturing</h4>
-                    <p>Industrial automation & control</p>
-                </div>
-                <div class="industry-item">
-                    <div class="industry-icon">🏗️</div>
-                    <h4>Infrastructure</h4>
-                    <p>Commercial & public projects</p>
-                </div>
-                <div class="industry-item">
-                    <div class="industry-icon">🛡️</div>
-                    <h4>Oil & Gas</h4>
-                    <p>Hazardous area applications</p>
-                </div>
-            </div>
-        </div>
+           <footer id="site-footer" class="site-footer bg-footer">
+	        <div class="main-footer">
+	            <div class="container-custom">
+	                <div class="row">
 
-        <!-- Your existing footer code remains unchanged -->
-        <footer id="site-footer" class="site-footer bg-footer">
-            <div class="main-footer">
-                <div class="container-custom">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="widget-footer">
-                                <div id="media_image-1" class="widget widget_media_image">
-                                    <a href="index.html"><img src="images/logo.png" alt=""></a>
-                                </div>
-                                <div id="custom_html-1" class="widget_text widget widget_custom_html">
-                                    <div class="textwidget custom-html-widget">
-                                        <p>Privacy | Integrity ©2019 Industris Company. <br>All Rights Res</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="widget-footer">
-                                <div id="custom_html-2" class="widget_text widget widget_custom_html padding-left">
-                                    <div class="textwidget custom-html-widget">
-                                        <ul>
-                                            <li><a href="service-detail.html">Oil & Gas exploited</a></li>
-                                            <li><a href="service-detail.html">Automotive Manufacturing</a></li>
-                                            <li><a href="service-detail.html">Transportation & Distribution</a></li>
-                                            <li><a href="service-detail.html">Manufacture</a></li>
-                                            <li><a href="service-detail.html">Industrial Construction</a></li>
-                                            <li><a href="service-detail.html">Green Energy</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="widget-footer">
-                                <div id="custom_html-3" class="widget_text widge widget-footer widget_custom_html padding-left">
-                                    <div class="textwidget custom-html-widget">
-                                        <ul>
-                                            <li><a href="index.html">About us</a></li>
-                                            <li><a href="about.html">Contact us</a></li>
-                                            <li><a href="services.html">The news</a></li>
-                                            <li><a href="services.html">Terms & conditions</a></li>
-                                            <li><a href="blog.html">Case Studies</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="widget-footer">
-                                <div id="mc4wp_form_widget-1" class="widget widget_mc4wp_form_widget">
-                                    <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-1696" method="post" data-id="1696" data-name="Industris Subscribe">
-                                        <div class="input-group">
-                                            <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" required="">
-                                            <span class="input-group-btn">
-                                                <button type="submit" class="btn btn-subcribe"><i class="icon ion-md-checkmark"></i></button>
-                                            </span>
-                                        </div>
-                                        <input type="hidden" name="_mc4wp_timestamp" value="1560227031">
-                                        <input type="hidden" name="_mc4wp_form_id" value="1696">
-                                        <input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1">
-                                        <div class="mc4wp-response"></div>
-                                    </form>
-                                </div>
-                                <div class="footer-social ot-socials bg-white">
-                                    follow us:
-                                    <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-facebook"></i></a>
-                                    <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-instagram"></i></a>
-                                    <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-skype"></i></a>
-                                    <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-twitter"></i></a>
-                                    <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-youtube"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="container-custom">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul class="topbar-left">
-                                <li><i class="icon ion-md-pin"></i>Forusbeen 50, 4035 Stavanger, Norway</li>
-                                <li><i class="icon ion-md-call"></i>+84 0378 260 852</li>
-                                <li><i class="icon ion-md-mail"></i>info.industris@gmail.com</li>
-                            </ul>
-                            <a id="back-to-top" href="#" class="btn btn-back-to-top pull-right">Back to top<i class="icon ion-ios-arrow-dropup-circle"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+	                    <div class="col-md-3 col-sm-6">
+	                    	<div class="widget-footer">
+		                        <div id="media_image-1" class="widget widget_media_image">
+		                            <a href="index.html"><img src="images/logo.png" alt=""></a>
+		                        </div>
+		                        <div id="custom_html-1" class="widget_text widget widget_custom_html">
+		                            <div class="textwidget custom-html-widget">
+		                                <p>Privacy | Integrity ©2019 Industris Company. <br>All Rights Res</p>
+		                            </div>
+		                        </div>
+		                    </div>
+	                    </div>
+	                    <!-- end col-lg-3 -->
+
+	                    <div class="col-md-3 col-sm-6">
+	                    	<div class="widget-footer">
+		                        <div id="custom_html-2" class="widget_text widget widget_custom_html padding-left">
+		                            <div class="textwidget custom-html-widget">
+		                                <ul>
+		                                    <li><a href="service-detail.html">Oil & Gas exploited</a></li>
+		                                    <li><a href="service-detail.html">Automotive Manufacturing</a></li>
+		                                    <li><a href="service-detail.html">Transportation & Distribution</a></li>
+		                                    <li><a href="service-detail.html">Manufacture</a></li>
+		                                    <li><a href="service-detail.html">Industrial Construction</a></li>
+		                                    <li><a href="service-detail.html">Green Energy</a></li>
+		                                </ul>
+		                            </div>
+		                        </div>
+	                        </div>
+	                    </div>
+	                    <!-- end col-lg-3 -->
+
+	                    <div class="col-md-3 col-sm-6">
+	                    	<div class="widget-footer">
+		                        <div id="custom_html-3" class="widget_text widge widget-footer widget_custom_html padding-left">
+		                            <div class="textwidget custom-html-widget">
+		                                <ul>
+		                                    <li><a href="index.html">About us</a></li>
+		                                    <li><a href="about.html">Contact us</a></li>
+		                                    <li><a href="services.html">The news</a></li>
+		                                    <li><a href="services.html">Terms & conditions</a></li>
+		                                    <li><a href="blog.html">Case Studies</a></li>
+		                                </ul>
+		                            </div>
+		                        </div>
+		                    </div>
+	                    </div>
+	                    <!-- end col-lg-3 -->
+
+	                    <div class="col-md-3 col-sm-6">
+	                    	<div class="widget-footer">
+		                        <div id="mc4wp_form_widget-1" class="widget widget_mc4wp_form_widget">
+		                            <!-- Mailchimp for WordPress v4.5.2 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
+		                            <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-1696" method="post" data-id="1696" data-name="Industris Subscribe">
+	                                    <div class="input-group">
+	                                        <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" required="">
+	                                        <span class="input-group-btn">
+	                                        	<button type="submit" class="btn btn-subcribe"><i class="icon ion-md-checkmark"></i></button>
+	                                        </span>
+	                                    </div>
+		                                <input type="hidden" name="_mc4wp_timestamp" value="1560227031">
+		                                <input type="hidden" name="_mc4wp_form_id" value="1696">
+		                                <input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1">
+		                                <div class="mc4wp-response"></div>
+		                            </form>
+		                        </div>
+	                            <!-- / Mailchimp for WordPress Plugin -->
+
+	                            <div class="footer-social ot-socials bg-white">
+	                            	follow us:
+	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-facebook"></i></a>
+	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-instagram"></i></a>
+	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-skype"></i></a>
+	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-twitter"></i></a>
+	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-youtube"></i></a>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <!-- end col-lg-3 -->
+
+	                </div>
+	            </div>
+	        </div>
+	        <!-- .main-footer -->
+	        <div class="footer-bottom">
+	            <div class="container-custom">
+	            	<div class="row">
+	            		<div class="col-md-12">
+		                    <ul class="topbar-left">
+		                        <li><i class="icon ion-md-pin"></i>Forusbeen 50, 4035 Stavanger, Norway</li>
+		                        <li><i class="icon ion-md-call"></i>+84 0378 260 852</li>
+		                        <li><i class="icon ion-md-mail"></i>info.industris@gmail.com</li>
+		                    </ul>
+			        		<a id="back-to-top" href="#" class="btn btn-back-to-top pull-right">Back to top<i class="icon ion-ios-arrow-dropup-circle"></i></a>
+			        	</div>
+			        </div>
+	            </div>
+	        </div>
+	        <!-- .copyright-footer -->
+	    </footer>
+        <!-- Footer remains unchanged -->
+       
     </div>
 
     <script src='js/jquery.min.js'></script>
@@ -729,5 +845,46 @@
     <script src='js/jquery.magnific-popup.min.js'></script>
     <script src='js/jquery.isotope.min.js'></script>
     <script src='js/scripts.js'></script>
+    
+    <script>
+        // Add smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll for product cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe product cards
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 </html>
