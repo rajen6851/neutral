@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGR Solutions | Neutral Grounding Resistor Systems</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0A2463;
+            --secondary-blue: #1E40AF;
+            --accent-orange: #F97316;
+            --accent-yellow: #F59E0B;
+            --light-gray: #F8FAFC;
+            --medium-gray: #94A3B8;
+            --dark-gray: #334155;
+            --text-dark: #1E293B;
+            --text-light: #64748B;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--accent-orange);
+            font-size: 28px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 36, 99, 0.9), rgba(10, 36, 99, 0.9)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-orange);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #EA580C;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Features Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--accent-orange);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--secondary-blue);
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+        }
+
+        /* Standards Section */
+        .standards {
+            padding: 60px 0;
+            background-color: var(--light-gray);
+        }
+
+        .standards-bar {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .standard-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .standard-icon {
+            font-size: 24px;
+            color: var(--accent-orange);
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .why-choose-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            margin-bottom: 20px;
+            padding-left: 35px;
+            position: relative;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-orange);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .image-slider {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .slider-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background-color: var(--accent-orange);
+            transform: scale(1.2);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(10, 36, 99, 0.9), rgba(10, 36, 99, 0.9)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-buttons-2 {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--accent-orange);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-orange);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: var(--accent-yellow);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-orange);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .why-choose-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .standards-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .cta-buttons-2 {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 70px 0;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="logo-text">NGR Solutions</div>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#why-choose">Why Choose Us</a>
+                    <a href="#applications">Applications</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Precision Neutral Grounding Resistor (NGR) Systems</h1>
+            <p>Engineered for safety, reliability & compliance across industrial & mining applications.</p>
+            
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Contact Our Engineers
+                </a>
+                <a href="#brochure" class="btn btn-secondary">
+                    <i class="fas fa-download"></i> Download Technical Brochure
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our NGR System Capabilities</h2>
+                <p>Comprehensive solutions designed for the most demanding industrial environments</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Feature Card 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Custom or Standard Supply</h3>
+                    <p>Supply of resistor banks only for incorporation into customers' own enclosures with full customization options.</p>
+                </div>
+                
+                <!-- Feature Card 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Seismic & Weather-Rated Enclosures</h3>
+                    <p>Enclosures rated from IP00 to IP56, with seismic-rated options available for demanding environments.</p>
+                </div>
+                
+                <!-- Feature Card 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Mining Standard Compliance</h3>
+                    <p>Full compliance with Mining Standards for NGR Monitoring & Earth-fault Protection.</p>
+                </div>
+                
+                <!-- Feature Card 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Built-in NER Monitoring</h3>
+                    <p>Provision of NER Monitoring at the time of manufacture for enhanced safety and diagnostics.</p>
+                </div>
+                
+                <!-- Feature Card 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Full Range of Accessories</h3>
+                    <p>CTs, PTs, heaters, manual/motorized isolators, vacuum contactors, and other essential accessories.</p>
+                </div>
+                
+                <!-- Feature Card 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Type-Tested & Certified</h3>
+                    <p>All designs comply with ANSI-IEEE 32. Type-tested certificates available upon request.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standards Bar -->
+    <section class="standards">
+        <div class="container">
+            <div class="standards-bar">
+                <div class="standard-item">
+                    <div class="standard-icon">
+                        <i class="fas fa-file-certificate"></i>
+                    </div>
+                    <div>
+                        <h4>ANSI-IEEE 32 Compliant</h4>
+                    </div>
+                </div>
+                
+                <div class="standard-item">
+                    <div class="standard-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div>
+                        <h4>Mining Standards</h4>
+                    </div>
+                </div>
+                
+                <div class="standard-item">
+                    <div class="standard-icon">
+                        <i class="fas fa-thermometer-three-quarters"></i>
+                    </div>
+                    <div>
+                        <h4>IP00-IP56 Rated</h4>
+                    </div>
+                </div>
+                
+                <div class="standard-item">
+                    <div class="standard-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div>
+                        <h4>Seismic Rated</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our NGR Solutions</h2>
+                <p>Industry-leading features designed for maximum reliability and safety</p>
+            </div>
+            
+            <div class="why-choose-content">
+                <div>
+                    <ul class="features-list">
+                        <li>Single pole electrical/mechanical operated vacuum contactors</li>
+                        <li>Every unit includes space heater with thermostat + 6A socket</li>
+                        <li>Manual & motorized isolators with pad-lock facility</li>
+                        <li>Customizable monitoring & protection integration</li>
+                        <li>Full compliance with ANSI-IEEE 32 standards</li>
+                        <li>All NGRs come with space heater with thermostat and 6 Amp Socket</li>
+                        <li>Type-tested standard designs with certificates available</li>
+                    </ul>
+                </div>
+                
+                <div class="image-slider">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="NGR Enclosure Interior" class="slider-image">
+                    
+                    <div class="slider-nav">
+                        <div class="slider-dot active"></div>
+                        <div class="slider-dot"></div>
+                        <div class="slider-dot"></div>
+                        <div class="slider-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Need a Tailored NGR Solution?</h2>
+            <p>Contact our engineering team for customized solutions that meet your specific requirements</p>
+            
+            <div class="cta-buttons-2">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-phone-alt"></i> Contact Our Engineers
+                </a>
+                <a href="#brochure" class="btn btn-outline">
+                    <i class="fas fa-file-download"></i> Download Technical Brochure
+                </a>
+                <a href="#video" class="btn btn-outline">
+                    <i class="fas fa-play-circle"></i> View Product Explainer Video
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>NGR Solutions</h3>
+                    <p>Leading provider of precision neutral grounding resistor systems for industrial and mining applications worldwide.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#applications">Applications</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Industrial Park, Tech City</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@ngrsolutions.com</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li>ANSI-IEEE 32 Compliant</li>
+                        <li>Mining Standard Certified</li>
+                        <li>ISO 9001:2015</li>
+                        <li>Seismic Rated Designs</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 NGR Solutions. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Image slider functionality
+        const dots = document.querySelectorAll('.slider-dot');
+        const sliderImage = document.querySelector('.slider-image');
+        const images = [
+            'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1581094792965-d9d3d2c9fb0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1581094792623-8b9a3a5b7a2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1581094794792-9a5b5b5b5b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        ];
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', function() {
+                // Update active dot
+                dots.forEach(d => d.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Change image
+                sliderImage.src = images[index];
+            });
+        });
+        
+        // Auto-slide every 5 seconds
+        let currentSlide = 0;
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % dots.length;
+            
+            dots.forEach(d => d.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+            sliderImage.src = images[currentSlide];
+        }, 5000);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(window.innerWidth <= 768) {
+                        document.querySelector('.nav-links').style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

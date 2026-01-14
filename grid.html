@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Application Section Clone</title>
+  <style>
+    * { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+    body { margin: 0; background: #f4f6f8; }
+
+    /* Header */
+    .header {
+      background: linear-gradient(90deg, #0a4fa3, #0d63c7);
+      color: #fff;
+      text-align: center;
+      padding: 22px 0;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    /* Card */
+    .card {
+      background: #eaf1f7;
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    }
+
+    .card-inner {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid #f39c3d;
+      text-align: center;
+    }
+
+    .card-inner img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-inner h3 {
+      margin: 12px 0 14px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    /* Responsive tweak */
+    @media (max-width: 600px) {
+      .header { font-size: 22px; }
+      .card-inner img { height: 150px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">Application</div>
+
+  <div class="container">
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1581093588401-16f6368a6f6a" alt="Power Industries">
+          <h3>POWER INDUSTRIES</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1569308568469-9c4f3f5c61c9" alt="Nuclear Industries">
+          <h3>NUCLEAR INDUSTRIES</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1581091215367-59ab6c2b1b16" alt="Cement Industries">
+          <h3>CEMENT INDUSTRIES</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1581093458799-98c1e3b1eeb2" alt="OEMs Industry">
+          <h3>OEMs INDUSTRY</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1597007681820-3b1b9f0f4d27" alt="Steel Industries">
+          <h3>STEEL INDUSTRIES</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1601597111158-2f5e99b9f6f2" alt="Glass Industries">
+          <h3>GLASS INDUSTRIES</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e" alt="Petrochemical">
+          <h3>PETROCHEMICAL</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa" alt="Defence Sector">
+          <h3>DEFENCE SECTOR</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

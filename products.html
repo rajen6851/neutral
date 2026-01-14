@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltcontrol Engineering | Product Applications</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #003366;
+            --primary-dark: #002244;
+            --primary-light: #0055aa;
+            --accent: #ff6600;
+            --accent-light: #ff8833;
+            --dark: #1a1a2e;
+            --gray-dark: #2d3748;
+            --gray: #4a5568;
+            --gray-light: #e2e8f0;
+            --light: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-dark);
+            background-color: #f8fafc;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background-color: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .logo-text span {
+            color: var(--accent-light);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-light);
+        }
+
+        nav a.active:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        /* Hero Section */
+        .product-hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 34, 68, 0.9)), url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .product-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .product-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Sector Grid */
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .sector-card {
+            background: linear-gradient(145deg, var(--light), var(--gray-light));
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            height: 100%;
+            position: relative;
+        }
+
+        .sector-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .sector-icon {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary);
+            background-color: rgba(0, 51, 102, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sector-icon:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 102, 0, 0.1));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .sector-card:hover .sector-icon:after {
+            opacity: 1;
+        }
+
+        .sector-content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .sector-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .sector-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .sector-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Products Detail Section */
+        .products-detail {
+            background-color: #f1f5f9;
+            padding: 80px 0;
+        }
+
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .product-item {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-left-color: var(--accent);
+        }
+
+        .product-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(0, 51, 102, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .product-item h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .product-item ul {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+
+        .product-item ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--gray-light);
+            color: var(--gray);
+        }
+
+        .product-item ul li:before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Applications Section */
+        .applications-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .applications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .application-box {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            border-radius: var(--radius);
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .application-box:nth-child(even) {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        }
+
+        .application-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .application-box h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .application-box p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--accent-light);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-light);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .product-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .sectors-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="logo-text">Volt<span>Control</span></div>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="sectors.html">Sectors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="quote.html" class="btn" style="padding: 8px 20px;">Get Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="product-hero">
+        <div class="container">
+            <h1>Our Products & Applications</h1>
+            <p>High-performance neutral grounding resistors and electrical protection solutions engineered for diverse industrial applications. Trusted by industries worldwide for reliability and safety.</p>
+            <a href="#sectors" class="btn">Explore Applications</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Product Range</h2>
+                <p>Comprehensive electrical protection solutions designed for maximum safety and efficiency</p>
+            </div>
+            
+            <div class="products-container">
+                <div class="product-item">
+                    <div class="product-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Neutral Grounding Resistors</h3>
+                    <p>Limiting ground fault currents to protect electrical equipment in power systems. Available in various ratings and configurations.</p>
+                    <ul>
+                        <li>Low Resistance Grounding</li>
+                        <li>High Resistance Grounding</li>
+                        <li>Custom resistance values</li>
+                        <li>IP55 enclosures</li>
+                    </ul>
+                </div>
+                
+                <div class="product-item">
+                    <div class="product-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Control Panels</h3>
+                    <p>Advanced control and monitoring solutions for electrical protection systems.</p>
+                    <ul>
+                        <li>Neutral Isolation Switch Panels</li>
+                        <li>Earth Fault Protection Panels</li>
+                        <li>Monitoring & Control Systems</li>
+                        <li>Custom configurations</li>
+                    </ul>
+                </div>
+                
+                <div class="product-item">
+                    <div class="product-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Braking Resistors</h3>
+                    <p>Dynamic braking solutions for motor control and energy dissipation.</p>
+                    <ul>
+                        <li>Dynamic Braking Resistors</li>
+                        <li>Motor Control Resistors</li>
+                        <li>Crane Control Systems</li>
+                        <li>Custom heat dissipation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectors Grid -->
+    <section class="applications-section" id="sectors">
+        <div class="container">
+            <div class="section-title">
+                <h2>Industrial Applications</h2>
+                <p>Our products are engineered to meet the demanding requirements of diverse industrial sectors</p>
+            </div>
+            
+            <div class="sectors-grid">
+                <!-- Power Industries -->
+                <div class="sector-card">
+                    <div class="sector-icon">
+                        <i class="fas fa-power-off"></i>
+                    </div>
+                    <div class="sector-content">
+                        <h3>POWER INDUSTRIES</h3>
+                        <p>Thermal, hydro, nuclear and renewable power plants for generator and transformer protection.</p>
+                        <div class="sector-badge">High Voltage</div>
+                    </div>
+                </div>
+                
+                <!-- Nuclear Industries -->
+                <div class="sector-card">
+                    <div class="sector-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <div class="sector-content">
+                        <h3>NUCLEAR INDUSTRIES</h3>
+                        <p>Safety-critical applications in nuclear power plants with highest reliability standards.</p>
+                        <div class="sector-badge">Safety Critical</div>
+                    </div>
+                </div>
+                
+                <!-- Cement Industries -->
+                <div class="sector-card">
+                    <div class="sector-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="sector-content">
+                        <h3>CEMENT INDUSTRIES</h3>
+                        <p>Protection for heavy motors, crushers, and kiln drives in harsh industrial environments.</p>
+                        <div class="sector-badge">Heavy Industry</div>
+                    </div>
+                </div>
+                
+                <!-- OEMs Industry -->
+                <div class="sector-card">
+                    <div class="sector-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="sector-content">
+                        <h3>OEMs INDUSTRY</h3>
+                        <p>Custom solutions for original equipment manufacturers of transformers and switchgear.</p>
+                        <div class="sector-badge">Custom Solutions</div>
+                    </div>
+                </div>
+                
+                <!-- Steel Industries -->
+                <div class="sector-card">
+                    <div class="sector-icon">
+                        <i class="fas fa-weight-hanging"></i>
+                    </div>
+                    <div class="sector-content">
+                        <h3>STEEL INDUSTRIES</h3>
+                        <p>Arc furnace protection, rolling mills, and heavy motor applications in steel plants.</p>
+                        <div class="sector-badge">Heavy Load</div>
+                    </div>
+                </div>
+                
+                <!-- Glass Industries -->
+                <div class="sector-card">
+                    <div class="sector-icon">
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                    <div class="sector-content">
+                        <h3>GLASS INDUSTRIES</h3>
+                        <p>Furnace control, conveyor systems, and process heating applications.</p>
+                        <div class="sector-badge">Process Heating</div>
+                    </div>
+                </div>
+                
+                <!-- Petrochemical -->
+                <div class="sector-card">
+                    <div class="sector-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <div class="sector-content">
+                        <h3>PETROCHEMICAL</h3>
+                        <p>Hazardous area applications in refineries and chemical processing plants.</p>
+                        <div class="sector-badge">Hazardous Area</div>
+                    </div>
+                </div>
+                
+                <!-- Defence Sector -->
+                <div class="sector-card">
+                    <div class="sector-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="sector-content">
+                        <h3>DEFENCE SECTOR</h3>
+                        <p>Naval vessels, military bases, and defense equipment with stringent specifications.</p>
+                        <div class="sector-badge">Military Grade</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Detail -->
+    <section class="products-detail">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Applications</h2>
+                <p>Detailed application scenarios for our electrical protection solutions</p>
+            </div>
+            
+            <div class="applications-grid">
+                <div class="application-box">
+                    <div class="application-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Generator Protection</h3>
+                    <p>Neutral grounding resistors for generator protection in power plants, limiting fault currents to prevent equipment damage while ensuring selective relay operation.</p>
+                </div>
+                
+                <div class="application-box">
+                    <div class="application-icon">
+                        <i class="fas fa-subway"></i>
+                    </div>
+                    <h3>Traction Systems</h3>
+                    <p>Dynamic braking resistors for railway traction systems, providing controlled deceleration and energy dissipation for trains and metros.</p>
+                </div>
+                
+                <div class="application-box">
+                    <div class="application-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Renewable Energy</h3>
+                    <p>Grounding solutions for wind farms and solar power plants, protecting inverters and transformers in harsh environmental conditions.</p>
+                </div>
+                
+                <div class="application-box">
+                    <div class="application-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>Marine Applications</h3>
+                    <p>Marine-grade NGRs for shipboard electrical systems, designed to withstand saltwater environments and vessel vibrations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Protect Your Electrical Systems?</h2>
+                <p>Contact our engineering team for customized solutions tailored to your specific industrial requirements.</p>
+                <a href="contact.html" class="btn">Contact Us</a>
+                <a href="quote.html" class="btn btn-secondary">Request Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Voltcontrol Engineering</h3>
+                    <p>Leading manufacturer of neutral grounding resistors and electrical protection solutions with 12+ years of industry expertise.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="sectors.html">Applications</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Products</h3>
+                    <ul>
+                        <li><a href="#">Neutral Grounding Resistors</a></li>
+                        <li><a href="#">Control Panels</a></li>
+                        <li><a href="#">Braking Resistors</a></li>
+                        <li><a href="#">Harmonic Filters</a></li>
+                        <li><a href="#">Custom Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Plot No. 123, Industrial Area</li>
+                        <li><i class="fas fa-phone"></i> +91 12345 67890</li>
+                        <li><i class="fas fa-envelope"></i> info@voltcontrol.com</li>
+                        <li><i class="fas fa-globe"></i> www.voltcontrol.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Voltcontrol Engineering PVT LTD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add hover effect to sector cards
+        const sectorCards = document.querySelectorAll('.sector-card');
+        sectorCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.sector-icon i');
+                icon.style.transform = 'scale(1.1)';
+                icon.style.transition = 'transform 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.sector-icon i');
+                icon.style.transform = 'scale(1)';
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.sector-card, .product-item, .application-box').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
