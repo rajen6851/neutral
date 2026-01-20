@@ -41,6 +41,16 @@
     display: none !important;
 }
 
+.select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+
 
 .contact-wrapper {
     max-width: 700px;
@@ -86,15 +96,17 @@ textarea {
     resize: vertical;
 }
 
-.row {
-    display: flex;
-    gap: 10px;
-}
 
 .radio-group label {
-    display: block;
+    display: inline-block;
     margin-bottom: 8px;
+    cursor: pointer;
 }
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
 
 button {
     padding: 12px 25px;
@@ -123,6 +135,125 @@ button {
     justify-content: space-between;
 }
 
+
+
+/* Footer Base */
+.site-footer {
+    background: #0f6eec;
+    color: #cfd6e1;
+    font-size: 14px;
+}
+
+.site-footer a {
+    color: #cfd6e1;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #ffffff;
+}
+
+/* Main Footer */
+.main-footer {
+    padding: 60px 0 40px;
+}
+
+.widget-footer img {
+    max-width: 180px;
+    margin-bottom: 15px;
+}
+
+/* Footer Lists */
+.widget-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget-footer ul li {
+    margin-bottom: 10px;
+}
+
+.padding-left {
+    padding-left: 25px;
+}
+
+/* Subscribe */
+.btn-subcribe {
+    background: #c9a14a;
+    color: #000;
+    border: none;
+}
+
+.btn-subcribe:hover {
+    background: #b8923f;
+}
+
+/* Social */
+.footer-social {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.footer-social a {
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background: #091423;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-contact i {
+    margin-right: 5px;
+    color: #c9a14a;
+}
+
+/* Back to top */
+.btn-back-to-top {
+    background: transparent;
+    color: #cfd6e1;
+    font-size: 13px;
+}
+
+.btn-back-to-top:hover {
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .padding-left {
+        padding-left: 0;
+    }
+
+    .footer-contact li {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .btn-back-to-top {
+        float: none !important;
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+
   </style>
 </head>
 
@@ -146,30 +277,9 @@ button {
 	            </div>
 	        </div>
 	    </div>
-	    <header id="site-header" class="site-header mobile-header-blue header-style-1">
-	        <div id="header_topbar" class="header-topbar md-hidden sm-hidden clearfix">
-	            <div class="container-custom">
-	                <div class="row">
-	                    <div class="col-md-8">
-	                        <!-- Info on Topbar -->
-	                        <ul class="topbar-left">
-	                            <li><i class="icon ion-md-pin"></i>Forusbeen 50, 4035 Stavanger, Norway</li>
-	                            <li><i class="icon ion-md-call"></i>+84 0378 260 852</li>
-	                            <li><i class="icon ion-md-mail"></i>info.industris@gmail.com</li>
-	                        </ul>
-	                    </div>
-                        <!-- Info on topbar close -->
-	                    <div class="col-md-4">
-	                    	<ul class="topbar-right pull-right">
-		                        <li class="toggle_search topbar-search"><a href="#"><i class="icon ion-md-search"></i></a></li>
-		                        <li class="topbar-login"><a href="#"> Login </a></li>
-		                        <li class="topbar-languages"><a href="#"> English <i class="icon ion-ios-arrow-down"></i></a></li>
-	                        </ul>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	        <!-- Top bar close -->
+	 	    <header id="site-header" class="site-header mobile-header-blue header-style-1">
+
+	       	        <!-- Top bar close -->
 	        <div class="main-header md-hidden sm-hidden">
 	        	<div class="container-custom">
 	        		<div class="row">
@@ -178,26 +288,27 @@ button {
 			        			<a href="index.html"><img src="images/logo.png" alt="industris"></a>
 			        		</div>
 			        	</div>
-			        	<div class="col-md-9">
+			        	<div class="col-md-20">
 			        		<div class="main-navigation">
-			        		<ul id="primary-menu" class="menu">
-    <li class="menu-item"><a href="index.html">Home</a></li>
-    <li class="menu-item"><a href="about-us.html">About Us</a></li>
-    <li class="menu-item"><a href="product.html">Product</a></li>
-    <li class="menu-item"><a href="client.html">Client</a></li>
-    <li class="menu-item"><a href="sector.html">Sector</a></li>
-    <li class="menu-item"><a href="contact.html">Contact</a></li>
-</ul>
+                  <ul id="primary-menu" class="menu">
+                      <li class="menu-item"><a href="index.html">Home</a></li>
+                      <li class="menu-item"><a href="about-us.html">About Us</a></li>
+                      <li class="menu-item"><a href="product.html">Product</a></li>
+                      <li class="menu-item"><a href="client.html">Client</a></li>
+                      <li class="menu-item"><a href="sector.html">Sector</a></li>
+                      <li class="menu-item"><a href="contact.html">Contact</a></li>
+                  </ul>
 
-		        				<a href="#" class="btn btn-primary">Get a quote<i class="icon ion-md-paper-plane"></i></a>
+		        				
 			        		</div>
 			        	</div>
 		        	</div>
 	        	</div>
 	        </div>
 	        <!-- Main header start -->
+	        <!-- Main header start -->
 	        
-    <!-- Mobile header start -->
+	        <!-- Mobile header start -->
 	        <div class="mobile-header">
 	        	<div class="container-custom">
 	        		<div class="row">
@@ -222,10 +333,7 @@ button {
 								<li class="menu-item"><a href="sector.html">Sector</a></li>
 								<li class="menu-item"><a href="contact.html">Contact</a></li>
 							</ul>
-		        				<a href="#" class="btn btn-primary">Get a quote<i class="icon ion-md-paper-plane"></i></a>
-			        		</div>
-			        	</div>
-		        	</div>
+		        				
 	        	</div>
 	        </div>
 	    </header>
@@ -277,22 +385,24 @@ button {
 <div class="form-step">
     <h3>Step 2 – Products</h3>
     <p>Please select the product line that you are interested in.</p>
+    <br>
+    <select name="product" required>
+        <option value="" disabled selected>Select a product</option>
+        <option value="low_resistance">Low Resistance Grounding</option>
+        <option value="high_resistance">High Resistance Grounding</option>
+        <option value="resistor_elements">Resistor Elements</option>
+        <option value="harmonic_filter">Harmonic Filter</option>
+        <option value="dynamic_braking">Dynamic Braking Resistors</option>
+        <option value="motor_control">Motor Control Resistors</option>
+        <option value="other">Other</option>
+    </select>
 
-    <div class="radio-group">
-        <label><input type="radio" name="product"> Low Resistance Grounding</label>
-        <label><input type="radio" name="product"> High Resistance Grounding</label>
-        <label><input type="radio" name="product"> Resistor Elements</label>
-        <label><input type="radio" name="product"> Harmonic Filter</label>
-        <label><input type="radio" name="product"> Dynamic Braking Resistors</label>
-        <label><input type="radio" name="product"> Motor Control Resistors</label>
-        <label><input type="radio" name="product"> Other</label>
-    </div>
-
-    <div class="btn-group">
+    <div class="btn-group" style="margin-top: 15px;">
         <button type="button" class="prev-btn">Back</button>
         <button type="button" class="next-btn">Next</button>
     </div>
 </div>
+
 
         <!-- STEP 3 -->
        <div class="form-step">
@@ -427,14 +537,14 @@ document.querySelectorAll('.prev-btn').forEach(btn => {
 	            </div>
 	        </div>
 	        <!-- .main-footer -->
-	        <div class="footer-bottom">
+	      <div class="footer-bottom">
 	            <div class="container-custom">
 	            	<div class="row">
 	            		<div class="col-md-12">
 		                    <ul class="topbar-left">
-		                        <li><i class="icon ion-md-pin"></i>Forusbeen 50, 4035 Stavanger, Norway</li>
-		                        <li><i class="icon ion-md-call"></i>+84 0378 260 852</li>
-		                        <li><i class="icon ion-md-mail"></i>info.industris@gmail.com</li>
+		                        <li><i class="icon ion-md-pin"></i>Please reach us : B No. G-177, Regal Homes, Khajuri Kalan, Bhopal Bypass, Bhopal Madhya Pradesh - 462022, India</li>
+		                        <li><i class="icon ion-md-call"></i>9244255007</li>
+		                        <li><i class="icon ion-md-mail"></i> voltcontrolengineering@gmail.com</li>
 		                    </ul>
 			        		<a id="back-to-top" href="#" class="btn btn-back-to-top pull-right">Back to top<i class="icon ion-ios-arrow-dropup-circle"></i></a>
 			        	</div>
