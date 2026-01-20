@@ -446,113 +446,222 @@
   </div>
 
 </section>
+<footer class="footer-advanced">
+  <div class="footer-content">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Logo & About -->
+        <div class="footer-section about">
+          <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Voltcontrol Logo">
+          </a>
+          <p>
+            Voltcontrol Engineering Pvt. Ltd. <br>
+            Privacy | Integrity ©2026 <br>
+            All rights reserved.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-skype"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-section links">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="#">Oil & Gas Exploited</a></li>
+            <li><a href="#">Automotive Manufacturing</a></li>
+            <li><a href="#">Transportation & Distribution</a></li>
+            <li><a href="#">Industrial Construction</a></li>
+            <li><a href="#">Green Energy</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-section newsletter">
+          <h3>Subscribe to our Newsletter</h3>
+          <form>
+            <input type="email" placeholder="Your Email Address" required>
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="container bottom-container">
+      <p>
+        <i class="fas fa-map-marker-alt"></i> B No. G-177, Regal Homes, Khajuri Kalan, Bhopal Bypass, Bhopal, MP - 462022 |
+        <i class="fas fa-phone"></i> 9244255007 |
+        <i class="fas fa-envelope"></i> voltcontrolengineering@gmail.com
+      </p>
+      <a href="#" class="back-to-top">Back to top <i class="fas fa-arrow-up"></i></a>
+    </div>
+  </div>
+</footer>
+
+<style>
+/* ===== Advanced Modern Footer ===== */
+.footer-advanced {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  padding: 60px 0;
+}
+
+/* Logo & About */
+.footer-section.about .logo img {
+  max-width: 160px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px;
+}
+
+.footer-section.about p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #aaa;
+}
+
+.social-icons a {
+  color: #00c6ff;
+  margin-right: 12px;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+/* Links sections */
+.footer-section.links h3 {
+  color: #00c6ff;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  position: relative;
+}
+.footer-section.links h3::after {
+  content: '';
+  width: 50px;
+  height: 2px;
+  background: #00c6ff;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  border-radius: 2px;
+}
+
+.footer-section.links ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section.links ul li {
+  margin-bottom: 12px;
+}
+.footer-section.links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer-section.links ul li a:hover {
+  color: #00c6ff;
+  text-decoration: underline;
+}
+
+/* Newsletter */
+.footer-section.newsletter h3 {
+  color: #00c6ff;
+  margin-bottom: 15px;
+}
+.footer-section.newsletter form {
+  display: flex;
+  gap: 10px;
+}
+.footer-section.newsletter input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: none;
+}
+.footer-section.newsletter button {
+  background: #00c6ff;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.footer-section.newsletter button:hover {
+  background: #0086b3;
+}
+
+/* Bottom footer */
+.footer-bottom {
+  background: rgba(0,0,0,0.75);
+  padding: 20px 0;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-bottom .back-to-top {
+  color: #00c6ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.footer-bottom .back-to-top i {
+  margin-left: 5px;
+}
+.footer-bottom p i {
+  color: #00c6ff;
+  margin-right: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
 
-	    <footer id="site-footer" class="site-footer bg-footer">
-	        <div class="main-footer">
-	            <div class="container-custom">
-	                <div class="row">
-
-	                    <div class="col-md-3 col-sm-6">
-	                    	<div class="widget-footer">
-		                        <div id="media_image-1" class="widget widget_media_image">
-		                            <a href="index.html"><img src="images/logo.png" alt=""></a>
-		                        </div>
-		                        <div id="custom_html-1" class="widget_text widget widget_custom_html">
-		                            <div class="textwidget custom-html-widget">
-		                                <p>Privacy | Integrity ©2019 Industris Company. <br>All Rights Res</p>
-		                            </div>
-		                        </div>
-		                    </div>
-	                    </div>
-	                    <!-- end col-lg-3 -->
-
-	                    <div class="col-md-3 col-sm-6">
-	                    	<div class="widget-footer">
-		                        <div id="custom_html-2" class="widget_text widget widget_custom_html padding-left">
-		                            <div class="textwidget custom-html-widget">
-		                                <ul>
-		                                    <li><a href="service-detail.html">Oil & Gas exploited</a></li>
-		                                    <li><a href="service-detail.html">Automotive Manufacturing</a></li>
-		                                    <li><a href="service-detail.html">Transportation & Distribution</a></li>
-		                                    <li><a href="service-detail.html">Manufacture</a></li>
-		                                    <li><a href="service-detail.html">Industrial Construction</a></li>
-		                                    <li><a href="service-detail.html">Green Energy</a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-	                        </div>
-	                    </div>
-	                    <!-- end col-lg-3 -->
-
-	                    <div class="col-md-3 col-sm-6">
-	                    	<div class="widget-footer">
-		                        <div id="custom_html-3" class="widget_text widge widget-footer widget_custom_html padding-left">
-		                            <div class="textwidget custom-html-widget">
-		                                <ul>
-		                                    <li><a href="index.html">About us</a></li>
-		                                    <li><a href="about.html">Contact us</a></li>
-		                                    <li><a href="services.html">The news</a></li>
-		                                    <li><a href="services.html">Terms & conditions</a></li>
-		                                    <li><a href="blog.html">Case Studies</a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                    </div>
-	                    </div>
-	                    <!-- end col-lg-3 -->
-
-	                    <div class="col-md-3 col-sm-6">
-	                    	<div class="widget-footer">
-		                        <div id="mc4wp_form_widget-1" class="widget widget_mc4wp_form_widget">
-		                            <!-- Mailchimp for WordPress v4.5.2 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
-		                            <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-1696" method="post" data-id="1696" data-name="Industris Subscribe">
-	                                    <div class="input-group">
-	                                        <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" required="">
-	                                        <span class="input-group-btn">
-	                                        	<button type="submit" class="btn btn-subcribe"><i class="icon ion-md-checkmark"></i></button>
-	                                        </span>
-	                                    </div>
-		                                <input type="hidden" name="_mc4wp_timestamp" value="1560227031">
-		                                <input type="hidden" name="_mc4wp_form_id" value="1696">
-		                                <input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1">
-		                                <div class="mc4wp-response"></div>
-		                            </form>
-		                        </div>
-	                            <!-- / Mailchimp for WordPress Plugin -->
-
-	                            <div class="footer-social ot-socials bg-white">
-	                            	follow us:
-	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-facebook"></i></a>
-	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-instagram"></i></a>
-	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-skype"></i></a>
-	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-twitter"></i></a>
-	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-youtube"></i></a>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <!-- end col-lg-3 -->
-
-	                </div>
-	            </div>
-	        </div>
-	        <!-- .main-footer -->
-	        <div class="footer-bottom">
-	            <div class="container-custom">
-	            	<div class="row">
-	            		<div class="col-md-12">
-		                    <ul class="topbar-left">
-		                        <li><i class="icon ion-md-pin"></i>Please reach us : B No. G-177, Regal Homes, Khajuri Kalan, Bhopal Bypass, Bhopal Madhya Pradesh - 462022, India</li>
-		                        <li><i class="icon ion-md-call"></i>9244255007</li>
-		                        <li><i class="icon ion-md-mail"></i> voltcontrolengineering@gmail.com</li>
-		                    </ul>
-			        		<a id="back-to-top" href="#" class="btn btn-back-to-top pull-right">Back to top<i class="icon ion-ios-arrow-dropup-circle"></i></a>
-			        	</div>
-			        </div>
-	            </div>
-	        </div>
-	        <!-- .copyright-footer -->
-	    </footer>
 	</div>
 
 	<script src='js/jquery.min.js'></script>

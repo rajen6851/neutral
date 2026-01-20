@@ -676,7 +676,7 @@ a.text-white:hover {
 
 /* HEADER HEIGHT FIX */
 .main-header {
-  background: #FFF;
+  background: #00c6ff;
     padding: 10px 0;
     height: 80px;
 }
@@ -690,7 +690,7 @@ a.text-white:hover {
 /* MENU HEIGHT FIX */
 .main-navigation ul.menu > li > a {
     /* padding: 10px 14px; */
-        padding: 20px 54px;
+        padding: 20px 44px;
     line-height: 1.2;
 }
 
@@ -1138,7 +1138,7 @@ a:hover, a:active {
 /* ###### */
 section {
   position: relative;
-  padding: 120px 0;
+  padding: 60px 0;
   display: block;
 }
 /*--------------------------------------------------------------
@@ -1596,7 +1596,7 @@ input.form-control, select.form-control {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 120px 0;
-   background:#03132b;
+   background:#cbdc10;
   color:#9CA3AF;
 }
 .main-footer-h3 {

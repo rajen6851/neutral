@@ -145,7 +145,7 @@
 .ngr-btn {
   display: inline-block;
   padding: 14px 34px;
-  background: linear-gradient(135deg, #1d4ed8, #0b1c4d);
+  background: #00c6ff;
   color: #fff;
   font-weight: 600;
   border-radius: 50px;
@@ -239,7 +239,7 @@
   display: inline-block;
   margin-top: 30px;
   padding: 14px 34px;
-  background: #1d4ed8;
+  background: #00c6ff;
   color: #fff;
   border-radius: 50px;
   font-weight: 600;
@@ -566,65 +566,132 @@
 
 
 
-		<div class="slider" data-show="1" data-arrow="true">
+	
 
-			<div>
-				<div class="slider-item">
-					
-                    <img src="images/slider1.jpg" alt="Industrial Image">
 
-					<div class="container">
-						<div class="row">
-							<div class="col-md-9">
-								<div class="slider-content">
-									<h4>WELCOME TO INDUSTRIS...!</h4>
-									<h1>The leading provider  of Industrial </h1>
-									<a class="btn btn-primary" href="#">Explore now</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+    <div class="slider" data-show="1" data-arrow="true">
 
-			<div>
-				<div class="slider-item">
-					
-                <img src="images/slider2.jpg" alt="Industrial Image">
+  <div>
+    <div class="slider-item">
+      <img src="images/slider1.jpg" alt="Industrial Image">
+      <div class="slider-content">
+        <h4>WELCOME TO INDUSTRIS...!</h4>
+        <h1>The leading provider of Industrial</h1>
+        <a class="btn btn-primary" href="#">Explore now</a>
+      </div>
+    </div>
+  </div>
 
-					<div class="container">
-						<div class="row">
-							<div class="col-md-9">
-								<div class="slider-content">
-									<h4>WELCOME TO INDUSTRIS...!</h4>
-									<h1>Leader in power Automation </h1>
-									<a class="btn btn-primary" href="#">Explore now</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+  <div>
+    <div class="slider-item">
+      <img src="images/slider2.jpg" alt="Industrial Image">
+      <div class="slider-content">
+        <h4>WELCOME TO INDUSTRIS...!</h4>
+        <h1>Leader in Power Automation</h1>
+        <a class="btn btn-primary" href="#">Explore now</a>
+      </div>
+    </div>
+  </div>
 
-			<div>
-				<div class="slider-item">
-				 <img src="images/slider3.jpg" alt="Industrial Image">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-9">
-								<div class="slider-content">
-									<h4>WELCOME TO INDUSTRIS...!</h4>
-									<h1>Best solution for Industrial &amp; Factories </h1>
-									<a class="btn btn-primary" href="#">Explore now</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+  <div>
+    <div class="slider-item">
+      <img src="images/slider3.jpg" alt="Industrial Image">
+      <div class="slider-content">
+        <h4>WELCOME TO INDUSTRIS...!</h4>
+        <h1>Best solution for Industrial &amp; Factories</h1>
+        <a class="btn btn-primary" href="#">Explore now</a>
+      </div>
+    </div>
+  </div>
 
-		<div class="section-divider"></div>
+</div>
+
+
+
+    <style>
+.slider-item {
+  position: relative;
+}
+
+/* Background Image */
+.slider-item img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Overlay for readability */
+.slider-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* dark transparent overlay */
+  z-index: 1;
+}
+
+/* Slider Content */
+.slider-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+  z-index: 2; /* make sure text is above overlay */
+  max-width: 600px;
+}
+
+/* Subtitle */
+.slider-content h4 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  opacity: 0.9;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+
+/* Title */
+.slider-content h1 {
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+/* Button */
+.slider-content .btn-primary {
+  background: #00c6ff;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.slider-content .btn-primary:hover {
+  background: #0056b3;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .slider-content {
+    left: 5%;
+    max-width: 90%;
+  }
+  .slider-content h1 {
+    font-size: 2rem;
+  }
+  .slider-content h4 {
+    font-size: 1rem;
+  }
+}
+
+</style>
+
+
 
 		
 <section class="ngr-hero">
@@ -632,7 +699,7 @@
 
     <!-- Image -->
     <div class="ngr-image-box">
-      <span class="ngr-badge">Industrial Power Solutions</span>
+    
       <img src="https://neutralgroundingresistor.in/wp-content/uploads/2023/05/IMG_20220523_0951101.png" alt="Oil Cooled NGR/NER">
     </div>
 
@@ -679,25 +746,33 @@
 
   </div>
 </section>
-
 <section class="ngr-enclosure-alt">
   <div class="ngr-alt-wrap">
 
     <!-- LEFT CONTENT -->
     <div class="ngr-alt-content">
-      <h2>Enclosure Materials<br><span>& Design</span></h2>
+      <h2>
+        Enclosure Materials<br>
+        <span>& Design</span>
+      </h2>
 
       <div class="ngr-point">
         <span></span>
         <p>
-         The standard enclosure material is Sheet steel  Minimum 2 mm thickness with an epoxy powder coat finish. Alternative materials include both SS-304 & SS-316 stainless steel.
-As standard we offer IP55 enclosures. They are suitable for outdoor use whilst also allowing good ventilation. We also supply IP33 and  IP54 enclosures. When side mounted cable termination chambers are specified they are IP54 or IP55 as standard.
-Whilst our standard range of enclosures are suitable for most applications, we are also happy to provide custom designed equipment if your application requires it.
-
+          The standard enclosure material is Sheet steel minimum <strong>2 mm thickness</strong>
+          with an epoxy powder coat finish. Alternative materials include both
+          <strong>SS-304 & SS-316 stainless steel</strong>.
+          As standard we offer <strong>IP55 enclosures</strong>.
+          They are suitable for outdoor use whilst also allowing good ventilation.
+          We also supply <strong>IP33 and IP54 enclosures</strong>.
+          When side mounted cable termination chambers are specified they are
+          <strong>IP54 or IP55</strong> as standard.
+          Whilst our standard range of enclosures are suitable for most applications,
+          we are also happy to provide <strong>custom designed equipment</strong>
+          if your application requires it.
         </p>
       </div>
 
-      
       <a href="#" class="ngr-alt-btn">Custom Enclosure Request</a>
     </div>
 
@@ -709,158 +784,489 @@ Whilst our standard range of enclosures are suitable for most applications, we a
   </div>
 </section>
 
+<style>
+/* ===============================
+   ENCLOSURE SECTION – ENHANCED
+================================ */
+
+.ngr-enclosure-alt {
+  background: linear-gradient(180deg, #f7fafd, #eef4fb);
+  padding: 90px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ngr-alt-wrap {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  flex-wrap: wrap;
+}
+
+/* LEFT CONTENT */
+.ngr-alt-content {
+  flex: 1 1 560px;
+}
+
+/* HEADING – BIG & STRONG */
+.ngr-alt-content h2 {
+  font-size: 3.8rem;          /* 🔥 bigger */
+  line-height: 1.15;
+  color: #0b2b5c;
+  margin-bottom: 35px;
+  font-weight: 800;
+}
+
+.ngr-alt-content h2 span {
+  font-size: 3rem;            /* 🔥 even bigger */
+  color: #0d6efd;
+}
+
+/* PARAGRAPH */
+.ngr-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.ngr-point p {
+  font-size: 2.0rem;         /* 🔥 increased */
+  line-height: 2.1;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 35px;
+}
+
+/* DOT */
+.ngr-point span {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #0d6efd, #00c6ff);
+  border-radius: 50%;
+  margin-top: 14px;
+  flex-shrink: 0;
+}
+
+/* BUTTON */
+.ngr-alt-btn {
+  display: inline-block;
+  padding: 20px 52px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #00c6ff, #0d6efd);
+  color: #fff;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ngr-alt-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.2);
+}
+
+/* RIGHT IMAGE */
+.ngr-alt-image {
+  flex: 1 1 440px;
+}
+
+.ngr-alt-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+}
+
+/* RESPONSIVE */
+@media(max-width: 992px) {
+  .ngr-alt-wrap {
+    flex-direction: column-reverse;
+    gap: 45px;
+  }
+
+  .ngr-alt-content h2 {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+
+  .ngr-alt-content h2 span {
+    font-size: 3rem;
+  }
+
+  .ngr-point p {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  .ngr-alt-btn {
+    display: block;
+    margin: 0 auto;
+  }
+}
+</style>
 
 
-<section class="ngr-options">
-  <div class="ngr-options-wrap">
-      <!-- FEATURES -->
-    <div class="ngr-features-box">
-      <h3>Standard Features</h3>
 
-      <div class="ngr-feature-item">
-    	Full compliance with ANSI-IEEE 32, Terminology and Test Procedure for Neutral Grounding Devices
+<section class="ngr-modern-section py-5" style="background:#f4f7fb;">
+  <div class="container">
+    <div class="ngr-modern-wrapper">
+
+      <!-- Features Card -->
+      <div class="ngr-modern-card ngr-modern-features">
+        <div class="ngr-modern-header">
+          <i class="fas fa-cogs ngr-modern-icon"></i>
+          <h3 class="ngr-modern-title">Standard Features</h3>
+        </div>
+        <div class="ngr-modern-body">
+          <p class="ngr-modern-item">Full compliance with ANSI-IEEE 32, Terminology and Test Procedure for Neutral Grounding Devices</p>
+          <p class="ngr-modern-item">All NGR comes with space heater with thermostat and 6 Amp Socket.</p>
+          <p class="ngr-modern-item">Enclosures ratings from IP00 to IP56</p>
+          <p class="ngr-modern-item">Type-tested standard designs (certificates available)</p>
+        </div>
       </div>
 
-      <div class="ngr-feature-item">
-        All NGR comes with space heater with thermostat and 6 Amp Socket.  
+      <!-- Options Card -->
+      <div class="ngr-modern-card ngr-modern-options">
+        <div class="ngr-modern-header">
+          <i class="fas fa-tools ngr-modern-icon"></i>
+          <h3 class="ngr-modern-title">Options & Configurations</h3>
+        </div>
+        <ul class="ngr-modern-list">
+          <li>Supply of resistor banks only for incorporation into customers’ own enclosures</li>
+          <li>Seismic rated enclosures</li>
+          <li>Compliance with Mining Standard for NGR Monitoring & Earth-fault Protection</li>
+          <li>Provision of NER Monitoring at time of manufacture</li>
+          <li>Provision of Current Transformer, Potential Transformer, heaters, and other accessories</li>
+          <li>Manual & Motorized Isolators with pad lock facility</li>
+          <li>Single Pole Electrical/Mechanical Operated Vacuum Contactors</li>
+        </ul>
       </div>
 
-      <div class="ngr-feature-item">
-       	Enclosures ratings from IP00 to IP56
-      </div>
-
-      <div class="ngr-feature-item">
-       Type-tested standard designs (certificates available)
-      </div>
     </div>
-
-    <!-- OPTIONS -->
-    <div class="ngr-options-box">
-      <h3  class="Options">Options & Configurations</h3>
-
-      <ul>
-        <li>Supply of resistor banks only for incorporation into customers’ own enclosures</li>
-        <li>Seismic rated enclosures</li>
-        <li>Compliance with Mining Standard for NGR Monitiring & Earth-fault Protection</li>
-        <li>Provision of NER Monitoring at time of manufacture</li>
-        <li>Provision of Current Transformer ,Potential Transformer ,heaters, and other accessories</li>
-        <li>Manual & Motorized  Isolators with pad lock facility</li>
-        <li>Single Pole Electrical/Mechanical Operated  Vacuum Contactors </li>
-      </ul>
-    </div>
-
-  
-
   </div>
 </section>
 
 
+<style>
+/* ===== NGR Pro Section ===== */
+/* ===== NGR Modern Section ===== */
+.ngr-modern-section {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-	    <footer id="site-footer" class="site-footer bg-footer">
-	        <div class="main-footer">
-	            <div class="container-custom">
-	                <div class="row">
+.ngr-modern-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
 
-	                    <div class="col-md-3 col-sm-6">
-	                    	<div class="widget-footer">
-		                        <div id="media_image-1" class="widget widget_media_image">
-		                            <a href="index.html"><img src="images/logo.png" alt=""></a>
-		                        </div>
-		                        <div id="custom_html-1" class="widget_text widget widget_custom_html">
-		                            <div class="textwidget custom-html-widget">
-		                                <p>Privacy | Integrity ©2019 Industris Company. <br>All Rights Res</p>
-		                            </div>
-		                        </div>
-		                    </div>
-	                    </div>
-	                    <!-- end col-lg-3 -->
+/* Card Styling */
+.ngr-modern-card {
+  flex: 1 1 360px;
+  min-width: 360px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 25px;
+  border-left: 6px solid #0d6efd;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-	                    <div class="col-md-3 col-sm-6">
-	                    	<div class="widget-footer">
-		                        <div id="custom_html-2" class="widget_text widget widget_custom_html padding-left">
-		                            <div class="textwidget custom-html-widget">
-		                                <ul>
-		                                    <li><a href="service-detail.html">Oil & Gas exploited</a></li>
-		                                    <li><a href="service-detail.html">Automotive Manufacturing</a></li>
-		                                    <li><a href="service-detail.html">Transportation & Distribution</a></li>
-		                                    <li><a href="service-detail.html">Manufacture</a></li>
-		                                    <li><a href="service-detail.html">Industrial Construction</a></li>
-		                                    <li><a href="service-detail.html">Green Energy</a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-	                        </div>
-	                    </div>
-	                    <!-- end col-lg-3 -->
+.ngr-modern-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
 
-	                    <div class="col-md-3 col-sm-6">
-	                    	<div class="widget-footer">
-		                        <div id="custom_html-3" class="widget_text widge widget-footer widget_custom_html padding-left">
-		                            <div class="textwidget custom-html-widget">
-		                                <ul>
-		                                    <li><a href="index.html">About us</a></li>
-		                                    <li><a href="about.html">Contact us</a></li>
-		                                    <li><a href="services.html">The news</a></li>
-		                                    <li><a href="services.html">Terms & conditions</a></li>
-		                                    <li><a href="blog.html">Case Studies</a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                    </div>
-	                    </div>
-	                    <!-- end col-lg-3 -->
+/* Card Header */
+.ngr-modern-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-	                    <div class="col-md-3 col-sm-6">
-	                    	<div class="widget-footer">
-		                        <div id="mc4wp_form_widget-1" class="widget widget_mc4wp_form_widget">
-		                            <!-- Mailchimp for WordPress v4.5.2 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
-		                            <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-1696" method="post" data-id="1696" data-name="Industris Subscribe">
-	                                    <div class="input-group">
-	                                        <input type="email" name="EMAIL" class="form-control" placeholder="Email Address" required="">
-	                                        <span class="input-group-btn">
-	                                        	<button type="submit" class="btn btn-subcribe"><i class="icon ion-md-checkmark"></i></button>
-	                                        </span>
-	                                    </div>
-		                                <input type="hidden" name="_mc4wp_timestamp" value="1560227031">
-		                                <input type="hidden" name="_mc4wp_form_id" value="1696">
-		                                <input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1">
-		                                <div class="mc4wp-response"></div>
-		                            </form>
-		                        </div>
-	                            <!-- / Mailchimp for WordPress Plugin -->
+.ngr-modern-icon {
+  font-size: 2rem;
+  color: #0d6efd;
+  margin-right: 12px;
+}
 
-	                            <div class="footer-social ot-socials bg-white">
-	                            	follow us:
-	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-facebook"></i></a>
-	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-instagram"></i></a>
-	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-skype"></i></a>
-	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-twitter"></i></a>
-	                                <a target="_blank" href="#" rel="noopener noreferrer"><i class="icon ion-logo-youtube"></i></a>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <!-- end col-lg-3 -->
+.ngr-modern-title {
+  font-size: 1.6rem;
+  color: #0d6efd;
+  margin: 0;
+  font-weight: 600;
+}
 
-	                </div>
-	            </div>
-	        </div>
-	        <!-- .main-footer -->
-	     <div class="footer-bottom">
-	            <div class="container-custom">
-	            	<div class="row">
-	            		<div class="col-md-12">
-		                    <ul class="topbar-left">
-		                        <li><i class="icon ion-md-pin"></i>Please reach us : B No. G-177, Regal Homes, Khajuri Kalan, Bhopal Bypass, Bhopal Madhya Pradesh - 462022, India</li>
-		                        <li><i class="icon ion-md-call"></i>9244255007</li>
-		                        <li><i class="icon ion-md-mail"></i> voltcontrolengineering@gmail.com</li>
-		                    </ul>
-			        		<a id="back-to-top" href="#" class="btn btn-back-to-top pull-right">Back to top<i class="icon ion-ios-arrow-dropup-circle"></i></a>
-			        	</div>
-			        </div>
-	            </div>
-	        </div>
-	        <!-- .copyright-footer -->
-	    </footer>
+/* Card Body */
+.ngr-modern-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ngr-modern-item {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.ngr-modern-item::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #0d6efd;
+  font-size: 0.9rem;
+}
+
+/* Options List */
+.ngr-modern-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ngr-modern-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.ngr-modern-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0d6efd;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .ngr-modern-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+</style>
+
+<footer class="footer-advanced">
+  <div class="footer-content">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Logo & About -->
+        <div class="footer-section about">
+          <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Voltcontrol Logo">
+          </a>
+          <p>
+            Voltcontrol Engineering Pvt. Ltd. <br>
+            Privacy | Integrity ©2026 <br>
+            All rights reserved.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-skype"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-section links">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="#">Oil & Gas Exploited</a></li>
+            <li><a href="#">Automotive Manufacturing</a></li>
+            <li><a href="#">Transportation & Distribution</a></li>
+            <li><a href="#">Industrial Construction</a></li>
+            <li><a href="#">Green Energy</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-section newsletter">
+          <h3>Subscribe to our Newsletter</h3>
+          <form>
+            <input type="email" placeholder="Your Email Address" required>
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="container bottom-container">
+      <p>
+        <i class="fas fa-map-marker-alt"></i> B No. G-177, Regal Homes, Khajuri Kalan, Bhopal Bypass, Bhopal, MP - 462022 |
+        <i class="fas fa-phone"></i> 9244255007 |
+        <i class="fas fa-envelope"></i> voltcontrolengineering@gmail.com
+      </p>
+      <a href="#" class="back-to-top">Back to top <i class="fas fa-arrow-up"></i></a>
+    </div>
+  </div>
+</footer>
+
+<style>
+/* ===== Advanced Modern Footer ===== */
+.footer-advanced {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  padding: 60px 0;
+}
+
+/* Logo & About */
+.footer-section.about .logo img {
+  max-width: 160px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px;
+}
+
+.footer-section.about p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #aaa;
+}
+
+.social-icons a {
+  color: #00c6ff;
+  margin-right: 12px;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+/* Links sections */
+.footer-section.links h3 {
+  color: #00c6ff;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  position: relative;
+}
+.footer-section.links h3::after {
+  content: '';
+  width: 50px;
+  height: 2px;
+  background: #00c6ff;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  border-radius: 2px;
+}
+
+.footer-section.links ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section.links ul li {
+  margin-bottom: 12px;
+}
+.footer-section.links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer-section.links ul li a:hover {
+  color: #00c6ff;
+  text-decoration: underline;
+}
+
+/* Newsletter */
+.footer-section.newsletter h3 {
+  color: #00c6ff;
+  margin-bottom: 15px;
+}
+.footer-section.newsletter form {
+  display: flex;
+  gap: 10px;
+}
+.footer-section.newsletter input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: none;
+}
+.footer-section.newsletter button {
+  background: #00c6ff;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.footer-section.newsletter button:hover {
+  background: #0086b3;
+}
+
+/* Bottom footer */
+.footer-bottom {
+  background: rgba(0,0,0,0.75);
+  padding: 20px 0;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-bottom .back-to-top {
+  color: #00c6ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.footer-bottom .back-to-top i {
+  margin-left: 5px;
+}
+.footer-bottom p i {
+  color: #00c6ff;
+  margin-right: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 	</div>
 
 	<script src='js/jquery.min.js'></script>
