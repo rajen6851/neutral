@@ -1,24 +1,875 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Industris – Electrical Products</title>
+	<title>Industris – Home Page</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="css/ionicon.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/slick-theme.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="shortcut icon" href="favicon.png">
+	<link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.css" type="text/css" media="all">
+	<link rel="stylesheet" id="awesome-font-css" href="css/font-awesome.css" type="text/css" media="all">
+	<link rel="stylesheet" id="ionicon-font-css" href="css/ionicon.css" type="text/css" media="all">
+	<link rel="stylesheet" id="slick-slider-css" href="css/slick.css" type="text/css" media="all">
+	<link rel="stylesheet" id="slick-theme-css" href="css/slick-theme.css" type="text/css" media="all">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <style>
-        /* Product Image Gallery Styles */
+	<link rel="stylesheet" id="magnific-popup-css" href="css/magnific-popup.css" type="text/css" media="all">
+	<link rel="stylesheet" id="industris-style-css" href="/style.css" type="text/css" media="all">
+
+	<link rel="shortcut icon" href="favicon.png">
+
+	<style>
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===========================
+   ABOUT PAGE – INDUSTRIAL UI
+   =========================== */
+
+/* Page Header */
+.page-header {
+  background: linear-gradient(120deg, #0b1220, #111827);
+}
+
+.menu-item-has-children > a:after {
+    display: none !important;
+}
+
+.sub-menu {
+    display: none !important;
+}
+
+
+.page-header h1 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.page-header p {
+  font-size: 16px;
+}
+
+/* Section Spacing */
+
+/* Headings */
+.about-section h2,
+.section-padding h2 {
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.section-padding h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #facc15; /* industrial yellow */
+  display: block;
+  margin-top: 10px;
+}
+
+
+
+/* Paragraphs */
+.about-section p,
+.section-padding p {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #374151;
+}
+
+/* Images */
+.about-section img {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  border-radius: 12px;
+}
+
+/* Why Choose Us Icons */
+.section-padding i {
+  color: #facc15;
+  background: #111827;
+  padding: 20px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.section-padding i:hover {
+  transform: translateY(-6px);
+  background: #facc15;
+  color: #111827;
+}
+
+/* Why Choose Us Cards */
+.section-padding .col-md-4 {
+  padding: 30px 20px;
+}
+
+/* Team Section */
+.section-padding .row.text-center div {
+  background: #f9fafb;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 6px;
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Dark Section (R&D) */
+.section-padding[style*="background:#111827"] {
+  background: linear-gradient(120deg, #020617, #111827) !important;
+}
+
+.section-padding[style*="background:#111827"] h2 {
+  color: #ffffff;
+}
+
+.section-padding[style*="background:#111827"] p {
+  color: #d1d5db;
+}
+
+/* Buttons (if added later) */
+.btn-industrial {
+  background: #facc15;
+  color: #111827;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-industrial:hover {
+  background: #111827;
+  color: #ffffff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 50px 0;
+  }
+
+  .about-section img {
+    margin-top: 30px;
+  }
+}
+.why-choose-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+.why-item {
+    flex: 1;
+    background: #fff;
+    padding: 25px 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.why-item i {
+    color: #0056b3;
+}
+
+@media (max-width: 992px) {
+    .why-choose-row {
+        flex-wrap: wrap;
+    }
+    .why-item {
+        flex: 0 0 48%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .why-item {
+        flex: 0 0 100%;
+    }
+}
+
+
+
+/* Footer Base */
+.site-footer {
+    background: #0f6eec;
+    color: #cfd6e1;
+    font-size: 14px;
+}
+
+.site-footer a {
+    color: #cfd6e1;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #ffffff;
+}
+
+/* Main Footer */
+.main-footer {
+    padding: 60px 0 40px;
+}
+
+.widget-footer img {
+    max-width: 180px;
+    margin-bottom: 15px;
+}
+
+/* Footer Lists */
+.widget-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget-footer ul li {
+    margin-bottom: 10px;
+}
+
+.padding-left {
+    padding-left: 25px;
+}
+
+/* Subscribe */
+.btn-subcribe {
+    background: #c9a14a;
+    color: #000;
+    border: none;
+}
+
+.btn-subcribe:hover {
+    background: #b8923f;
+}
+
+/* Social */
+.footer-social {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.footer-social a {
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background: #091423;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-contact i {
+    margin-right: 5px;
+    color: #c9a14a;
+}
+
+/* Back to top */
+.btn-back-to-top {
+    background: transparent;
+    color: #cfd6e1;
+    font-size: 13px;
+}
+
+.btn-back-to-top:hover {
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .padding-left {
+        padding-left: 0;
+    }
+
+    .footer-contact li {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .btn-back-to-top {
+        float: none !important;
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+
+
+.about-modern {
+  background: linear-gradient(135deg, #f8f9fc, #ffffff);
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0d6efd;
+  background: rgba(13, 110, 253, 0.1);
+  border-radius: 50px;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.section-text {
+  font-size: 120rem;
+  color: #4b5563;
+   text-align: justify;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.feature-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #0d6efd;
+  font-weight: bold;
+}
+
+.image-card {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.image-card img {
+  border-radius: 12px;
+}
+
+
+.team-modern {
+  background: #f9fafb;
+}
+
+.team-card {
+  background: #ffffff;
+  padding: 30px 15px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.team-card i {
+  font-size: 38px;
+  color: #0d6efd;
+  margin-bottom: 15px;
+}
+
+.team-card h5 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0d6efd;
+  background: rgba(13, 110, 253, 0.1);
+  border-radius: 50px;
+}
+
+.section-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.section-text {
+  color: #4b5563;
+  max-width: 1520px;
+  margin: auto;
+}
+
+
+.rnd-premium {
+  background: radial-gradient(circle at top left, #1f2937, #020617);
+  padding: 100px 0;
+  position: relative;
+}
+
+.rnd-chip {
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 2.0rem;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  border-radius: 999px;
+}
+
+.rnd-title {
+  color: #ffffff;
+  font-size: 3.6rem;
+  font-weight: 800;
+  margin: 18px 0;
+  line-height: 1.2;
+}
+
+.rnd-text {
+  color: #cbd5f5;
+  font-size: 1.70rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.rnd-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+
+.rnd-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* Center horizontally */
+    justify-content: center; /* Center vertically if height fixed */
+    padding: 25px;
+   background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+     backdrop-filter: blur(8px);
+      transition: all 0.35s ease;
+}
+
+.rnd-card i {
+  font-size: 32px;
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.rnd-card h5 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.rnd-card p {
+  color: #d1d5db;
+  font-size: 0.95rem;
+}
+
+.rnd-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(56,189,248,0.15);
+}
+
+.feature-wrapper {
+  display: flex;
+  gap: 32px;
+}
+
+.feature-box {
+  flex: 1;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+  border: 1px solid #eaeaea;
+  transition: all 0.35s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.feature-title {
+  font-size: 24px;
+  color: #0a3b5c;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.feature-title::after {
+  content: "";
+  width: 45px;
+  height: 3px;
+  background: #0a3b5c;
+  display: block;
+  margin-top: 8px;
+}
+
+.feature-text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feature-wrapper {
+    flex-direction: column;
+  }
+}
+
+/* ========================
+   MOBILE RESPONSIVE STYLES
+   ======================== */
+
+/* General Mobile Adjustments */
+@media (max-width: 767px) {
+    /* Container Padding */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+    }
+    
+    /* Header Mobile Menu */
+    .main-header {
+        display: none !important;
+    }
+    
+    .mobile-header {
+        display: block !important;
+    }
+    
+    /* Product Detail Containers */
+    .product-detail-container {
+        margin: 20px 0 !important;
+        padding: 15px !important;
+        border-radius: 8px;
+    }
+    
+    .product-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px !important;
+    }
+    
+    .product-detail-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 10px;
+    }
+    
+    .product-price {
+        font-size: 1.2rem !important;
+        padding: 6px 12px;
+    }
+    
+    /* Product Detail Content */
+    .product-detail-content {
+        flex-direction: column !important;
+        padding: 20px 15px !important;
+        gap: 25px;
+    }
+    
+    .product-detail-image,
+    .product-detail-info {
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Image Gallery */
+    .main-image {
+        height: 250px !important;
+    }
+    
+    .thumbnails {
+        gap: 8px;
+    }
+    
+    .thumbnail {
+        min-width: 70px !important;
+        height: 70px !important;
+    }
+    
+    .zoom-btn {
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    /* Product Description */
+    .product-description {
+        font-size: 1rem !important;
+        line-height: 1.6;
+        text-align: left !important;
+        margin-bottom: 20px;
+    }
+    
+    /* Specifications */
+    .specification-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+    
+    .spec-item {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* Buttons */
+    .product-detail-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .detail-btn {
+        width: 100% !important;
+        min-width: auto !important;
+        padding: 12px 20px !important;
+        justify-content: center;
+    }
+    
+    /* Footer Adjustments */
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        padding: 40px 0 !important;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-section.links h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-bottom {
+        padding: 15px 0 !important;
+        text-align: center;
+    }
+    
+    .footer-bottom .bottom-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    /* Modal Adjustments */
+    .enquiry-modal {
+        width: 95% !important;
+        padding: 20px !important;
+        margin: 10px;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.3rem !important;
+    }
+    
+    /* Section Titles */
+    .section-title {
+        font-size: 1.8rem !important;
+        text-align: center;
+    }
+    
+    .section-text {
+        font-size: 0.95rem !important;
+        text-align: left !important;
+    }
+    
+    /* Feature Wrapper */
+    .feature-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* R&D Section */
+    .rnd-premium {
+        padding: 60px 0 !important;
+    }
+    
+    .rnd-title {
+        font-size: 2.2rem !important;
+        text-align: center;
+    }
+    
+    .rnd-text {
+        font-size: 1.2rem !important;
+        text-align: left;
+    }
+    
+    .rnd-card-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+    
+    .rnd-card {
+        padding: 20px 15px;
+        text-align: center;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 991px) {
+    .product-detail-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .product-detail-image,
+    .product-detail-info {
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px;
+    }
+    
+    .rnd-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .main-image {
+        height: 200px !important;
+    }
+    
+    .single-image {
+        height: 200px !important;
+    }
+    
+    .thumbnail {
+        min-width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .product-detail-title {
+        font-size: 1.3rem !important;
+    }
+    
+    .product-price {
+        font-size: 1.1rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .rnd-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .footer-section.newsletter form {
+        flex-direction: column;
+    }
+    
+    .footer-section.newsletter input,
+    .footer-section.newsletter button {
+        width: 100%;
+    }
+}
+
+/* Fix for mobile menu */
+@media (max-width: 767px) {
+    #mmenu_toggle {
+        display: block !important;
+    }
+    
+    .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        z-index: 1000;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .mobile-nav.active {
+        display: block;
+    }
+    
+    #primary-menu-mobile {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    #primary-menu-mobile li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+    
+    #primary-menu-mobile li a {
+        display: block;
+        padding: 12px 15px;
+    }
+}
+
+/* Image Modal Mobile Fix */
+@media (max-width: 767px) {
+    .modal-image-container {
+        max-width: 95% !important;
+        padding: 10px;
+    }
+    
+    .modal-close-btn {
+        top: -35px;
+        right: 10px;
+        font-size: 24px;
+    }
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent horizontal scroll */
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+   /* Product Image Gallery Styles */
         .product-gallery {
             position: relative;
             margin-bottom: 20px;
@@ -119,7 +970,7 @@
         }
 
         .product-detail-header {
-            padding: 25px 30px;
+            padding: 10px 20px;
             border-bottom: 1px solid #e8eaed;
             display: flex;
             justify-content: space-between;
@@ -184,8 +1035,9 @@
         }
 
         .product-description {
-            font-size: 1.1rem;
+            font-size: 1.6rem;
             color: #333;
+            text-align: justify;
             line-height: 1.7;
             margin-bottom: 25px;
         }
@@ -212,10 +1064,10 @@
         .spec-item {
             display: flex;
             justify-content: space-between;
-            padding: 12px 15px;
-            background: #f8f9fa;
+            padding: 5px 10px;
+            background: #06e5711c;
             border-radius: 6px;
-            border-left: 4px solid #003366;
+            border-left: 4px solid #007efd;
         }
 
         .spec-label {
@@ -533,38 +1385,95 @@
                 height: 60px;
             }
         }
-    </style>
+
+
+
+  </style>
 </head>
 
 <body>
     
-    <div id="page" class="site">
-        <!-- Header -->
-        <header id="site-header" class="site-header mobile-header-blue header-style-1">
-            <div class="main-header md-hidden sm-hidden">
-                <div class="container-custom">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="logo-brand">
-                                <a href="index.html"><img src="images/logo.png" alt="industris"></a>
-                            </div>
-                        </div>
-                        <div class="col-md-20">
-                            <div class="main-navigation">
-                                <ul id="primary-menu" class="menu">
-                                    <li class="menu-item"><a href="index.html">Home</a></li>
-                                    <li class="menu-item"><a href="about-us.html">About Us</a></li>
-                                    <li class="menu-item"><a href="product.html">Product</a></li>
-                                    <li class="menu-item"><a href="client.html">Client</a></li>
-                                    <li class="menu-item"><a href="sector.html">Sector</a></li>
-                                    <li class="menu-item"><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+
+	<div id="page" class="site">
+		<div class="collapse searchbar" id="searchbar">
+	        <div class="search-area">
+	            <div class="container">
+	                <div class="row">
+	                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+	                        <div class="input-group">
+	                            <input type="text" class="form-control" placeholder="Search for...">
+	                            <span class="input-group-btn">
+	            					<button class="btn btn-primary" type="button">Go!</button>
+	            				</span> 
+	            			</div>
+	                        <!-- /input-group -->
+	                    </div>
+	                    <!-- /.col-lg-6 -->
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <header id="site-header" class="site-header mobile-header-blue header-style-1">
+
+	        	        <!-- Top bar close -->
+	        <div class="main-header md-hidden sm-hidden">
+	        	<div class="container-custom">
+	        		<div class="row">
+	        			<div class="col-md-3">
+			        		<div class="logo-brand">
+			        			<a href="index.html"><img src="images/logo.png" alt="industris"></a>
+			        		</div>
+			        	</div>
+			        	<div class="col-md-20">
+			        		<div class="main-navigation">
+                  <ul id="primary-menu" class="menu">
+                      <li class="menu-item"><a href="index.html">Home</a></li>
+                      <li class="menu-item"><a href="about-us.html">About Us</a></li>
+                      <li class="menu-item"><a href="product.html">Product</a></li>
+                      <li class="menu-item"><a href="client.html">Client</a></li>
+                      <li class="menu-item"><a href="sector.html">Sector</a></li>
+                      <li class="menu-item"><a href="contact.html">Contact</a></li>
+                  </ul>
+
+		        		<a href="#" class="btn btn-primary">Get a quote<i class="icon ion-md-paper-plane"></i></a>
+			        		</div>
+			        	</div>
+		        	</div>
+	        	</div>
+	        </div>
+	        <!-- Main header start -->
+    <!-- Mobile header start -->
+	        <div class="mobile-header">
+	        	<div class="container-custom">
+	        		<div class="row">
+	        			<div class="col-xs-6">
+			        		<div class="logo-brand-mobile">
+			        			<a href="index.html"><img src="images/logo.png" alt="industris"></a>
+			        		</div>
+			        	</div>
+	        			<div class="col-xs-6">
+			        		<div id="mmenu_toggle">
+			                    <button></button>
+			                </div>
+			        	</div>
+			        	<div class="col-xs-12">
+			        		<div class="mobile-nav">
+			        			
+															<ul id="primary-menu-mobile" class="menu">
+								<li class="menu-item"><a href="index.html">Home</a></li>
+								<li class="menu-item"><a href="about-us.html">About Us</a></li>
+								<li class="menu-item"><a href="product.html">Product</a></li>
+								<li class="menu-item"><a href="client.html">Client</a></li>
+								<li class="menu-item"><a href="sector.html">Sector</a></li>
+								<li class="menu-item"><a href="contact.html">Contact</a></li>
+							</ul>
+
+			        	</div>
+		        	</div>
+	        	</div>
+	        </div>
+	    </header>
+        <!-- Mobile header start -->
 
         <!-- Image Modal -->
         <div class="image-modal" id="imageModal">
@@ -607,8 +1516,8 @@
                                     <div class="thumbnail" onclick="changeImage('images/product/image3.jpeg', 'mainImage2', this)">
                                         <img src="images/product/image3.jpeg" alt="Internal View">
                                     </div>
-                                    <div class="thumbnail" onclick="changeImage('images/product/image4.jpeg', 'mainImage2', this)">
-                                        <img src="images/product/image4.jpeg" alt="Installation View">
+                                    <div class="thumbnail" onclick="changeImage('images/product/image2.jpeg', 'mainImage2', this)">
+                                        <img src="images/product/image2.jpeg" alt="Installation View">
                                     </div>
                                 </div>
                             </div>
@@ -1245,7 +2154,10 @@ With firm commitment towards the quality, we are manufacturing, exporting and su
 }
 </style>
 
-    </div>
+</div>
+
+</div>
+</section>
 
     <!-- JavaScript -->
     <script>
@@ -1330,6 +2242,44 @@ With firm commitment towards the quality, we are manufacturing, exporting and su
             alert("Best quote request has been sent for: " + productName + "\nOur sales team will contact you shortly.");
             openEnquiryModal(productName);
         }
+
+
+        // Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mmenuToggle = document.getElementById('mmenu_toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const menuItems = document.querySelectorAll('#primary-menu-mobile li a');
+    
+    if (mmenuToggle) {
+        mmenuToggle.addEventListener('click', function() {
+            // Toggle mobile menu
+            if (mobileNav.style.display === 'block') {
+                mobileNav.style.display = 'none';
+            } else {
+                mobileNav.style.display = 'block';
+            }
+            
+            // Toggle hamburger icon animation
+            this.classList.toggle('active');
+        });
+    }
+    
+    // Close menu when clicking on a link
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            mobileNav.style.display = 'none';
+            document.querySelector('#mmenu_toggle').classList.remove('active');
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.mobile-header') && mobileNav.style.display === 'block') {
+            mobileNav.style.display = 'none';
+            document.querySelector('#mmenu_toggle').classList.remove('active');
+        }
+    });
+});
     </script>
 </body>
 </html>

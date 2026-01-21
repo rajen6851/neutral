@@ -697,6 +697,7 @@ a.text-white:hover {
 /* BUTTON HEIGHT FIX */
 .main-navigation .btn {
     padding: 8px 14px;
+    	margin-right:8px;
     font-size: 14px;
 }
 
@@ -1380,7 +1381,6 @@ input.form-control, select.form-control {
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
-  padding: 52px 25px;
   color: #272023;
   display: flex;
   position: relative;
@@ -3039,11 +3039,11 @@ div:last-child >.process .process-icon:after {
 --------------------------------------------------------------*/
 .slider .slider-content {
   position: absolute; 
-  bottom: 240px; 
+  bottom: 200px; 
   margin-top: -1px;
 }
 .slider .slider-content h1 {
-  color: #cc5320; 
+  color: #1d4ed8; 
   margin-bottom: 35px;
 }
 .slider .slider-content h4 {
@@ -4703,6 +4703,12 @@ table .cart-subtotal {
   section {
     padding: 60px 0;
   }
+
+  .slider-item {
+    position: relative;
+    height: 200px;   /* yahan apni required height set karo */
+    overflow: hidden;
+}
   .padding-bottom-medium {
     padding-bottom: 60px;
   }

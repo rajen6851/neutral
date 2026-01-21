@@ -6,17 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 	<title>Industris – Home Page</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+ 
+
+   <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 	<link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.css" type="text/css" media="all">
 	<link rel="stylesheet" id="awesome-font-css" href="css/font-awesome.css" type="text/css" media="all">
 	<link rel="stylesheet" id="ionicon-font-css" href="css/ionicon.css" type="text/css" media="all">
 	<link rel="stylesheet" id="slick-slider-css" href="css/slick.css" type="text/css" media="all">
 	<link rel="stylesheet" id="slick-theme-css" href="css/slick-theme.css" type="text/css" media="all">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 	<link rel="stylesheet" id="magnific-popup-css" href="css/magnific-popup.css" type="text/css" media="all">
 	<link rel="stylesheet" id="industris-style-css" href="/style.css" type="text/css" media="all">
 
 	<link rel="shortcut icon" href="favicon.png">
+
+
+
+
 
 	<style>
    * {
@@ -286,6 +294,325 @@
   }
 }
 
+/* ========================
+   MOBILE RESPONSIVE STYLES
+   ======================== */
+
+/* General Mobile Adjustments */
+@media (max-width: 767px) {
+    /* Container Padding */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+    }
+    
+    /* Header Mobile Menu */
+    .main-header {
+        display: none !important;
+    }
+    
+    .mobile-header {
+        display: block !important;
+    }
+    
+    /* Product Detail Containers */
+    .product-detail-container {
+        margin: 20px 0 !important;
+        padding: 15px !important;
+        border-radius: 8px;
+    }
+    
+    .product-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px !important;
+    }
+    
+    .product-detail-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 10px;
+    }
+    
+    .product-price {
+        font-size: 1.2rem !important;
+        padding: 6px 12px;
+    }
+    
+    /* Product Detail Content */
+    .product-detail-content {
+        flex-direction: column !important;
+        padding: 20px 15px !important;
+        gap: 25px;
+    }
+    
+    .product-detail-image,
+    .product-detail-info {
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Image Gallery */
+    .main-image {
+        height: 250px !important;
+    }
+    
+    .thumbnails {
+        gap: 8px;
+    }
+    
+    .thumbnail {
+        min-width: 70px !important;
+        height: 70px !important;
+    }
+    
+    .zoom-btn {
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    /* Product Description */
+    .product-description {
+        font-size: 1rem !important;
+        line-height: 1.6;
+        text-align: left !important;
+        margin-bottom: 20px;
+    }
+    
+    /* Specifications */
+    .specification-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+    
+    .spec-item {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* Buttons */
+    .product-detail-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .detail-btn {
+        width: 100% !important;
+        min-width: auto !important;
+        padding: 12px 20px !important;
+        justify-content: center;
+    }
+    
+    /* Footer Adjustments */
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        padding: 40px 0 !important;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-section.links h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-bottom {
+        padding: 15px 0 !important;
+        text-align: center;
+    }
+    
+    .footer-bottom .bottom-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    /* Modal Adjustments */
+    .enquiry-modal {
+        width: 95% !important;
+        padding: 20px !important;
+        margin: 10px;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.3rem !important;
+    }
+    
+    /* Section Titles */
+    .section-title {
+        font-size: 1.8rem !important;
+        text-align: center;
+    }
+    
+    .section-text {
+        font-size: 0.95rem !important;
+        text-align: left !important;
+    }
+    
+    /* Feature Wrapper */
+    .feature-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* R&D Section */
+    .rnd-premium {
+        padding: 60px 0 !important;
+    }
+    
+    .rnd-title {
+        font-size: 2.2rem !important;
+        text-align: center;
+    }
+    
+    .rnd-text {
+        font-size: 1.2rem !important;
+        text-align: left;
+    }
+    
+    .rnd-card-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+    
+    .rnd-card {
+        padding: 20px 15px;
+        text-align: center;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 991px) {
+    .product-detail-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .product-detail-image,
+    .product-detail-info {
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px;
+    }
+    
+    .rnd-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .main-image {
+        height: 200px !important;
+    }
+    
+    .single-image {
+        height: 200px !important;
+    }
+    
+    .thumbnail {
+        min-width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .product-detail-title {
+        font-size: 1.3rem !important;
+    }
+    
+    .product-price {
+        font-size: 1.1rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .rnd-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .footer-section.newsletter form {
+        flex-direction: column;
+    }
+    
+    .footer-section.newsletter input,
+    .footer-section.newsletter button {
+        width: 100%;
+    }
+}
+
+/* Fix for mobile menu */
+@media (max-width: 767px) {
+    #mmenu_toggle {
+        display: block !important;
+    }
+    
+    .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        z-index: 1000;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .mobile-nav.active {
+        display: block;
+    }
+    
+    #primary-menu-mobile {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    #primary-menu-mobile li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+    
+    #primary-menu-mobile li a {
+        display: block;
+        padding: 12px 15px;
+    }
+}
+
+/* Image Modal Mobile Fix */
+@media (max-width: 767px) {
+    .modal-image-container {
+        max-width: 95% !important;
+        padding: 10px;
+    }
+    
+    .modal-close-btn {
+        top: -35px;
+        right: 10px;
+        font-size: 24px;
+    }
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent horizontal scroll */
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
   </style>
 </head>
 
@@ -330,7 +657,7 @@
                       <li class="menu-item"><a href="sector.html">Sector</a></li>
                       <li class="menu-item"><a href="contact.html">Contact</a></li>
                   </ul>
-
+<a href="#" class="btn btn-primary">Get a quote<i class="icon ion-md-paper-plane"></i></a>
 		        				
 			        		</div>
 			        	</div>
