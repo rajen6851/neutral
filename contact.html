@@ -577,6 +577,152 @@ body {
 }
 
 
+/* MAIN WRAPPER */
+.cnt-wrapper{
+  max-width:1200px;
+  margin:50px auto;
+  display:flex;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  background:#fff;
+}
+
+/* LEFT */
+.cnt-left{
+  width:40%;
+  background:#053061;
+  color:#fff;
+  padding:40px;
+}
+
+.cnt-left h2{
+  margin-bottom:10px;
+}
+
+.cnt-left p{
+  opacity:0.9;
+  margin-bottom:30px;
+}
+
+.cnt-item{
+  display:flex;
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.cnt-item i{
+  font-size:22px;
+  background:rgba(255,255,255,0.15);
+  width:45px;
+  height:45px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+}
+
+.cnt-item span{
+  display:block;
+  margin-top:4px;
+}
+
+.cnt-item small{
+  opacity:0.7;
+}
+
+.cnt-social{
+  margin-top:40px;
+}
+
+.cnt-social i{
+  margin-right:12px;
+  font-size:18px;
+  cursor:pointer;
+  opacity:0.8;
+}
+
+.cnt-social i:hover{
+  opacity:1;
+}
+
+/* RIGHT */
+.cnt-right{
+  width:60%;
+  padding:40px;
+}
+
+.cnt-right h2{
+  margin-bottom:20px;
+  color:#053061;
+}
+
+.cnt-row{
+  display:flex;
+  gap:15px;
+  margin-bottom:15px;
+}
+
+.cnt-row input,
+textarea,
+select{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+textarea{
+  resize:none;
+}
+
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.cnt-next{
+  background:#053061;
+  color:#fff;
+}
+
+.cnt-prev{
+  background:#ccc;
+}
+
+.cnt-submit{
+  background:#053061;
+  color:#fff;
+}
+
+.cnt-btns{
+  display:flex;
+  justify-content:space-between;
+  margin-top:15px;
+}
+
+/* STEPS */
+.cnt-step{
+  display:none;
+}
+
+.cnt-step.active{
+  display:block;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .cnt-wrapper{
+    flex-direction:column;
+  }
+  .cnt-left,.cnt-right{
+    width:100%;
+  }
+}
+
+
   </style>
 </head>
 
@@ -619,7 +765,7 @@ body {
                       <li class="menu-item"><a href="product.html">Product</a></li>
                       <li class="menu-item"><a href="client.html">Client</a></li>
                       <li class="menu-item"><a href="sector.html">Sector</a></li>
-                      <li class="menu-item"><a href="contact.html">Contact</a></li>
+                      <li class="menu-item"><a href="contact.html">Contact Us</a></li>
                   </ul>
 <a href="#" class="btn btn-primary">Get a quote<i class="icon ion-md-paper-plane"></i></a>
 		        				
@@ -654,7 +800,7 @@ body {
 								<li class="menu-item"><a href="product.html">Product</a></li>
 								<li class="menu-item"><a href="client.html">Client</a></li>
 								<li class="menu-item"><a href="sector.html">Sector</a></li>
-								<li class="menu-item"><a href="contact.html">Contact</a></li>
+								<li class="menu-item"><a href="contact.html">Contact Us</a></li>
 							</ul>
 		        				<a href="#" class="btn btn-primary">Get a quote<i class="icon ion-md-paper-plane"></i></a>
 	        	</div>
@@ -662,114 +808,173 @@ body {
 	    </header>
         <!-- Mobile header start -->
 
-		
-<div class="contact-wrapper">
-    <h2>Contact Us</h2>
-    <p class="sub-text">Tell us about your requirements</p>
+<div class="cnt-wrapper">
 
-    <form id="contactForm">
+  <!-- LEFT CONTACT INFO -->
+  <div class="cnt-left">
+    <h2>Contact Information</h2>
+    <p>Feel free to reach out through any of these channels:</p>
 
+    <div class="cnt-item">
+      <i class="fas fa-envelope"></i>
+      <div>
+        <strong>Email</strong>
+        <span> voltcontrolengineering@gmail.com</span>
+        <small>We'll respond within 24 hours</small>
+      </div>
+    </div>
 
-		<div class="form-step active">
-    <h3>Personal Information</h3>
+    <div class="cnt-item">
+      <i class="fas fa-phone"></i>
+      <div>
+        <strong>Phone</strong>
+        <span>9244255007</span>
+        <small>Mon–Fri 9am–6pm</small>
+      </div>
+    </div>
 
-    <div class="row">
+    <div class="cnt-item">
+      <i class="fas fa-map-marker-alt"></i>
+      <div>
+        <strong>Location</strong>
+        <span>B No. G-177, Regal Homes, Khajuri Kalan, Bhopal Bypass, Bhopal, MP - 462022 </span>
+        <small>Serving nationwide</small>
+      </div>
+    </div>
+
+    <div class="cnt-social">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-linkedin-in"></i>
+    </div>
+  </div>
+
+  <!-- RIGHT FORM -->
+ <div class="cnt-right">
+  <h2>Send us a Message</h2>
+
+  <form id="cntForm">
+
+    <!-- STEP 1 : PERSONAL INFORMATION -->
+    <div class="cnt-step active">
+      <h3>Personal Information</h3>
+
+      <div class="cnt-row">
         <input type="text" placeholder="First Name *" required>
         <input type="text" placeholder="Last Name *" required>
+      </div>
 
-          <input type="text" placeholder="Company *" required>
-    <input type="text" placeholder="Company Type *" required>
-    <input type="text" placeholder="Country *" required>
+      <div class="cnt-row">
+        <input type="text" placeholder="Company *" required>
+        <input type="text" placeholder="Company Type *" required>
+      </div>
 
-    <input type="text" placeholder="Street Address *" required>
-    <input type="text" placeholder="Address Line 2">
-    </div>
-
-  
-    <div class="row">
+      <div class="cnt-row">
+        <input type="text" placeholder="Country *" required>
         <input type="text" placeholder="City *" required>
+      </div>
+
+      <div class="cnt-row">
+        <input type="text" placeholder="Street Address *" required>
+        <input type="text" placeholder="Address Line 2">
+      </div>
+
+      <div class="cnt-row">
         <input type="text" placeholder="State *" required>
         <input type="text" placeholder="ZIP Code *" required>
-    </div>
+      </div>
 
-    <div class="row">
+      <div class="cnt-row">
         <input type="text" placeholder="Phone *" required>
         <input type="text" placeholder="Cell">
-    </div>
+      </div>
 
-    <div class="row">
+      <div class="cnt-row">
         <input type="text" placeholder="Fax">
         <input type="email" placeholder="Email *" required>
+      </div>
+
+      <button type="button" class="cnt-next">Next</button>
     </div>
 
-    <button type="button" class="next-btn">Next</button>
+    <!-- STEP 2 : PRODUCTS -->
+    <div class="cnt-step">
+      <h3>Products</h3>
+      <p>Please select the product line that you are interested in.</p>
+
+      <select required>
+        <option value="">Select a product</option>
+        <option>Low Resistance Grounding</option>
+        <option>High Resistance Grounding</option>
+        <option>Resistor Elements</option>
+        <option>Harmonic Filter</option>
+        <option>Dynamic Braking Resistors</option>
+        <option>Motor Control Resistors</option>
+        <option>Other</option>
+      </select>
+
+      <div class="cnt-btns">
+        <button type="button" class="cnt-prev">Back</button>
+        <button type="button" class="cnt-next">Next</button>
+      </div>
+    </div>
+
+    <!-- STEP 3 : PROJECT DETAILS -->
+    <div class="cnt-step">
+      <h3>Project Details</h3>
+
+      <input type="text" placeholder="Project Name">
+      <textarea rows="4" placeholder="Comments / Electrical Specifications"></textarea>
+
+      <h4>Contact</h4>
+      <textarea rows="3" placeholder="Address"></textarea>
+
+      <div class="cnt-row">
+        <input type="email" placeholder="Mail">
+        <input type="text" placeholder="Contact Number">
+      </div>
+
+      <input type="text" placeholder="Website">
+
+      <div class="cnt-btns">
+        <button type="button" class="cnt-prev">Back</button>
+        <button type="submit" class="cnt-submit">
+          <i class="fa fa-paper-plane"></i> Submit
+        </button>
+      </div>
+    </div>
+
+  </form>
 </div>
 
 
-        <!-- STEP 2 -->
-<div class="form-step">
-    <h3>Products</h3>
-    <p>Please select the product line that you are interested in.</p>
-    <br>
-    <select name="product" required>
-        <option value="" disabled selected>Select a product</option>
-        <option value="low_resistance">Low Resistance Grounding</option>
-        <option value="high_resistance">High Resistance Grounding</option>
-        <option value="resistor_elements">Resistor Elements</option>
-        <option value="harmonic_filter">Harmonic Filter</option>
-        <option value="dynamic_braking">Dynamic Braking Resistors</option>
-        <option value="motor_control">Motor Control Resistors</option>
-        <option value="other">Other</option>
-    </select>
-
-    <div class="btn-group" style="margin-top: 15px;">
-        <button type="button" class="prev-btn">Back</button>
-        <button type="button" class="next-btn">Next</button>
-    </div>
-</div>
-
-
-        <!-- STEP 3 -->
-       <div class="form-step">
-    <h3>Project Details</h3>
-
-    <input type="text" placeholder="Project Name">
-    <textarea placeholder="Comments / Electrical Specifications"></textarea>
-
-    <h4>Contact</h4>
-    <textarea placeholder="Address"></textarea>
-    <input type="email" placeholder="Mail">
-    <input type="text" placeholder="Contact Number">
-    <input type="text" placeholder="Website">
-
-    <div class="btn-group">
-        <button type="button" class="prev-btn">Back</button>
-        <button type="submit" class="submit-btn">Submit</button>
-    </div>
 </div>
 <script>
-const steps = document.querySelectorAll('.form-step');
+const steps = document.querySelectorAll('.cnt-step');
 let currentStep = 0;
 
-document.querySelectorAll('.next-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        steps[currentStep].classList.remove('active');
-        currentStep++;
-        steps[currentStep].classList.add('active');
-    });
+document.querySelectorAll('.cnt-next').forEach(btn => {
+  btn.addEventListener('click', () => {
+    steps[currentStep].classList.remove('active');
+    currentStep++;
+    steps[currentStep].classList.add('active');
+  });
 });
 
-document.querySelectorAll('.prev-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        steps[currentStep].classList.remove('active');
-        currentStep--;
-        steps[currentStep].classList.add('active');
-    });
+document.querySelectorAll('.cnt-prev').forEach(btn => {
+  btn.addEventListener('click', () => {
+    steps[currentStep].classList.remove('active');
+    currentStep--;
+    steps[currentStep].classList.add('active');
+  });
 });
 </script>
 
 
-    </form>
+
+
+   
 </div>
 <footer class="footer-advanced">
   <div class="footer-content">

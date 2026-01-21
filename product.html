@@ -18,6 +18,9 @@
 	<link rel="stylesheet" id="magnific-popup-css" href="css/magnific-popup.css" type="text/css" media="all">
 	<link rel="stylesheet" id="industris-style-css" href="/style.css" type="text/css" media="all">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 	<link rel="shortcut icon" href="favicon.png">
 
 	<style>
@@ -163,6 +166,33 @@
     justify-content: space-between;
     gap: 20px;
     flex-wrap: nowrap;
+}
+.specification-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  overflow: hidden;
+  max-height: 140px;
+  transition: max-height 0.4s ease;
+}
+
+.product-specification.expanded .specification-grid {
+  max-height: 1000px;
+}
+
+.spec-toggle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 14px;
+}
+
+.product-specification.expanded .spec-toggle i {
+  transform: rotate(180deg);
 }
 
 .why-item {
@@ -1432,7 +1462,7 @@ body {
                       <li class="menu-item"><a href="product.html">Product</a></li>
                       <li class="menu-item"><a href="client.html">Client</a></li>
                       <li class="menu-item"><a href="sector.html">Sector</a></li>
-                      <li class="menu-item"><a href="contact.html">Contact</a></li>
+                      <li class="menu-item"><a href="contact.html">Contact Us</a></li>
                   </ul>
 
 		        		<a href="#" class="btn btn-primary">Get a quote<i class="icon ion-md-paper-plane"></i></a>
@@ -1465,7 +1495,7 @@ body {
 								<li class="menu-item"><a href="product.html">Product</a></li>
 								<li class="menu-item"><a href="client.html">Client</a></li>
 								<li class="menu-item"><a href="sector.html">Sector</a></li>
-								<li class="menu-item"><a href="contact.html">Contact</a></li>
+								<li class="menu-item"><a href="contact.html">Contact Us</a></li>
 							</ul>
 
 			        	</div>
@@ -1572,15 +1602,21 @@ body {
                                         <span class="spec-value">Made in India</span>
                                     </div>
                                 </div>
+                                <div class="spec-toggle" onclick="toggleSpecs(this)">
+
+    <span class="toggle-text">More Information</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
                             </div>
                             
                             <div class="product-detail-actions">
                                 <button class="detail-btn detail-btn-primary" onclick="openEnquiryModal('Dynamic Braking Resistor')">
                                     <i class="fa fa-envelope"></i> Yes! I am Interested
-                                </button>
-                               
+                                </button>                    
                             </div>
+                            
                         </div>
+                        
                     </div>
                 </div>
 
@@ -1621,53 +1657,79 @@ body {
                             </div>
                         </div>
                         
-                        <div class="product-detail-info">
-                            <div class="product-description">
-                              Neutral Grounding (Earthing) Resistors – called Neutral Grounding Resistors (NGRs) – are employed in AC distribution networks to limit the current that would flow through the neutral point of a transformer or generator in the event of an earth fault.
-NERs limit fault currents to a value that does not cause any further damage to switchgear, generators or transformers beyond what has already been caused by the fault itself, and in some cases limit touch and step potentials to safer values than a solidly grounded systems. In addition, consideration is given to operation of protection relays with CT’s within the required time.
-                            </div>
-                            
-                            <div class="product-specification">
-                                <h3 class="specification-title">Product Specifications</h3>
-                                <div class="specification-grid">
-                                    <div class="spec-item">
-                                        <span class="spec-label">Usage/Application</span>
-                                        <span class="spec-value">To Limit Ground Fault Currents To Safe Levels So That All The Electrical Equipment In A Power System</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <span class="spec-label">Brand</span>
-                                        <span class="spec-value">Voltcontrol Engineering Private Limited</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <span class="spec-label">Surface Treatment</span>
-                                        <span class="spec-value">Powder Coated</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <span class="spec-label">Shape</span>
-                                        <span class="spec-value">Rectangular</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <span class="spec-label">IP Protection</span>
-                                        <span class="spec-value">IP56</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <span class="spec-label">Phase</span>
-                                        <span class="spec-value">Three Phase</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <span class="spec-label">Material</span>
-                                        <span class="spec-value">Mild Steel</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <span class="spec-label">Mounting type</span>
-                                        <span class="spec-value">Through Hole</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <span class="spec-label">Warranty</span>
-                                        <span class="spec-value">22kV</span>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="product-detail-info">
+                            <div class="product-description" id="desc">
+                        <p>
+                            Neutral Grounding (Earthing) Resistors – called Neutral Grounding Resistors (NGRs) – are employed in AC distribution networks to limit the current that would flow through the neutral point of a transformer or generator in the event of an earth fault.
+                            NERs limit fault currents to a value that does not cause any further damage to switchgear, generators or transformers beyond what has already been caused by the fault itself, and in some cases limit touch and step potentials to safer values than a solidly grounded systems. In addition, consideration is given to operation of protection relays with CT’s within the required time.
+                        </p>
+
+ 
+                    </div>
+
+
+
+
+
+                     <div class="product-specification" >
+  <h3 class="specification-title">Product Specifications</h3>
+
+  <div class="specification-grid">
+    <!-- same spec-item blocks -->
+    <div class="spec-item">
+      <span class="spec-label">Usage/Application</span>
+      <span class="spec-value">All The Electrical Equipment In A Power System</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Brand</span>
+      <span class="spec-value">Voltcontrol Engineering Private Limited</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Surface Treatment</span>
+      <span class="spec-value">Powder Coated</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Shape</span>
+      <span class="spec-value">Rectangular</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">IP Protection</span>
+      <span class="spec-value">IP56</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Phase</span>
+      <span class="spec-value">Three Phase</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Material</span>
+      <span class="spec-value">Mild Steel</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Mounting type</span>
+      <span class="spec-value">Through Hole</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Warranty</span>
+      <span class="spec-value">22kV</span>
+    </div>
+  </div>
+
+  <div class="spec-toggle" onclick="toggleSpecs(this)">
+
+    <span class="toggle-text">More Information</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</div>
+
+<script>
+    function toggleSpecs(el) {
+  const specBox = el.closest(".product-specification");
+  specBox.classList.toggle("expanded");
+}
+
+
+</script>
+
                             
                             <div class="product-detail-actions">
                                 <button class="detail-btn detail-btn-primary" onclick="openEnquiryModal('Neutral Grounding Resistor NGR Series')">
@@ -1768,6 +1830,11 @@ With firm commitment towards the quality, we are manufacturing, exporting and su
                                         <span class="spec-value">415 V</span>
                                     </div>
                                 </div>
+                                <div class="spec-toggle" onclick="toggleSpecs(this)">
+
+    <span class="toggle-text">More Information</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
                             </div>
                             
                             <div class="product-detail-actions">
@@ -1862,7 +1929,15 @@ With firm commitment towards the quality, we are manufacturing, exporting and su
                                         <span class="spec-value">Made in India</span>
                                     </div>
                                 </div>
+                                <div class="spec-toggle" onclick="toggleSpecs(this)">
+
+    <span class="toggle-text">More Information</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
                             </div>
+
+                            
+                            
                             
                             <div class="product-detail-actions">
                                 <button class="detail-btn detail-btn-primary" onclick="openEnquiryModal('Industrial Heating Resistors')">
