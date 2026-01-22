@@ -1638,27 +1638,29 @@ body {
   margin-right: 5px;
 }
 
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  color: #fff;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 9999;
-  text-decoration: none;
+.wa-new-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+    z-index: 9999;
+    transition: transform 0.3s ease;
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.1);
+.wa-new-btn img {
+    width: 28px;
+    height: 28px;
+}
+
+.wa-new-btn:hover {
+    transform: scale(1.1);
 }
 
 
@@ -1681,12 +1683,10 @@ body {
 	<script src='js/scripts.js'></script>
 
   <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/919999999999?text=Hello%20I%20want%20to%20enquire%20about%20your%20products"
-   class="whatsapp-float"
-   target="_blank"
-   aria-label="WhatsApp Inquiry">
-   <i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/919244255007 " class="wa-new-btn" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
+
 
 </body>
 </html>
